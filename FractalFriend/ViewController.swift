@@ -12,14 +12,25 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+//        fractalView.contentSize = CGSize(width: UIScreen.main.bounds.width * 2.0, height: UIScreen.main.bounds.height * 2.0)
+//        fractalView.minimumZoomScale = 0.1
+//        fractalView.maximumZoomScale = 10
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBOutlet weak var fractalView: FractalView!
+    
+    @IBAction func depthChanged(_ sender: UIStepper) {
+        fractalView.depth = CGFloat(sender.value)
     }
-
-
+    
+    @IBAction func leftAngleChanged(_ sender: UIStepper) {
+        fractalView.leftAngle = Double(sender.value)
+    }
+    
+    @IBAction func rightAngleChanged(_ sender: UIStepper) {
+        fractalView.rightAngle = Double(sender.value)
+    }
+    
 }
 
