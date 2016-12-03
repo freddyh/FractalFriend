@@ -11,11 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-//        fractalView.contentSize = CGSize(width: UIScreen.main.bounds.width * 2.0, height: UIScreen.main.bounds.height * 2.0)
-//        fractalView.minimumZoomScale = 0.1
-//        fractalView.maximumZoomScale = 10
+        super.viewDidLoad()        
     }
     
     @IBOutlet weak var fractalView: FractalView!

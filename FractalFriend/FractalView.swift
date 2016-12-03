@@ -11,8 +11,7 @@ import UIKit
 class FractalView: UIView {
     
     let PI = 3.141592
-    let maxDepth = 15
-    var isDrawing = false
+    let maxDepth = 18
     
     var leftAngle:Double = 0.1 {
         didSet {
@@ -35,21 +34,15 @@ class FractalView: UIView {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
-        if isDrawing {
-            NSLog("i'm busy drawing")
+        // don't redraw if max depth is exceeded
+        if depth > maxDepth {
             return
         }
-        isDrawing = true
         
         // origin of the base branch
         let treeOrigin = CGPoint.init(x: self.bounds.width/2, y: self.bounds.height/2)
         
-        if depth > maxDepth {
-            depth = maxDepth;
-        }
-        
-        drawBranch(origin: treeOrigin, angle: PI / 2.0, depth: depth)
-        isDrawing = false
+        drawBranch(origin: treeOrigin, angle: PI/2, depth: depth)
     }
     
     func drawBranch(origin:CGPoint, angle:Double, depth:Int) -> Void {
@@ -63,14 +56,16 @@ class FractalView: UIView {
         
         let nextX = origin.x + CGFloat(cos(angle)) * scale
         let nextY = origin.y - CGFloat(sin(angle)) * scale
+        
+        //NSLog("\(origin.x - nextX)")        
+
         let endpoint = CGPoint.init(x: nextX, y: nextY)
         
         if depth > 0 {
             // draw a line to the endpoint
             drawBranchSegment(lineWidth: 1.0, fromPoint: origin, toPoint:endpoint)
             
-            // draw the children branches and set their origins to the endpoint of this branch
-            // use leftAngle and rightAngle to draw the children branches
+            // draw the children branches
             drawBranch(origin: endpoint, angle: angle + leftAngle, depth: depth - 1)
             drawBranch(origin: endpoint, angle: angle - rightAngle, depth: depth - 1)
         }

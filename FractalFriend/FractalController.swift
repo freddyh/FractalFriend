@@ -16,7 +16,7 @@ class FractalController: UIViewController {
     
     
     let radianData = Array(stride(from: 0.1, to: 3.2, by: 0.1))
-    let branchData = Array(stride(from: 2, to: 16, by: 1))
+    let branchData = Array(stride(from: 2, to: 18, by: 1))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,13 +24,16 @@ class FractalController: UIViewController {
         pickerView.delegate = self;
         pickerView.dataSource = self;
         
+        generateNewFractal()
     }
     
     @IBAction func screenTapped(_ sender: Any) {
         
-        NSLog("screen tapped")
-        
-        // choose three random indexes
+        generateNewFractal()
+    }
+
+    func randomizePickerValues() -> Void {
+        // choose three random indices
         let leftAngle = Int(arc4random_uniform(UInt32(self.radianData.count)))
         let rightAngle = Int(arc4random_uniform(UInt32(self.radianData.count)))
         let depth = Int(arc4random_uniform(UInt32(self.branchData.count)))
@@ -39,16 +42,17 @@ class FractalController: UIViewController {
         self.pickerView.selectRow(leftAngle, inComponent: 0, animated: true)
         self.pickerView.selectRow(rightAngle, inComponent: 1, animated: true)
         self.pickerView.selectRow(depth, inComponent: 2, animated: true)
-        
-        // update the fractal view
-        updateFractalView()
     }
-    
     
     func updateFractalView() -> Void {
         self.fractalView.leftAngle = self.radianData[self.pickerView.selectedRow(inComponent: 0)]
         self.fractalView.rightAngle = self.radianData[self.pickerView.selectedRow(inComponent: 1)]
         self.fractalView.depth = self.branchData[self.pickerView.selectedRow(inComponent: 2)]
+    }
+    
+    func generateNewFractal() -> Void {
+        randomizePickerValues()
+        updateFractalView()
     }
     
 }
@@ -65,14 +69,9 @@ extension FractalController: UIPickerViewDelegate {
     
     @available(iOS 2.0, *)
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        switch component {
-//        case 0: self.leftBranchAngle = self.radianData[row]; break;
-//        case 1: self.rightBranchAngle = self.radianData[row]; break;
-//        case 2: self.treeDepth = self.branchData[row]; break;
-//        default: break;
-//        }
         updateFractalView()
     }
+    
 }
 
 extension FractalController: UIPickerViewDataSource {
