@@ -37,6 +37,9 @@ class FractalView: UIView {
         // origin of the base branch
         let treeOrigin = CGPoint.init(x: self.bounds.width/2, y: self.bounds.height/2)
         
+        if depth > maxDepth {
+            depth = maxDepth;
+        }
         drawBranch(origin: treeOrigin, angle: PI / 2.0, depth: depth)
     }
     
