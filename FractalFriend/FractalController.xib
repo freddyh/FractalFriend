@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,6 +14,7 @@
                 <outlet property="fractalView" destination="emb-sj-E5H" id="arL-z3-NNK"/>
                 <outlet property="pickerView" destination="Mto-hF-doD" id="cIJ-L5-JQW"/>
                 <outlet property="singleTapRecognizer" destination="SRa-4G-Qhn" id="dB2-fS-pbs"/>
+                <outlet property="symmetrySwitch" destination="2fq-vr-gjk" id="WNI-5M-g9H"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -36,11 +36,22 @@
                     </connections>
                 </pickerView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap anywhere to generate a random fractal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5g-V3-eKY">
-                    <rect key="frame" x="19" y="20" width="337.5" height="14.5"/>
+                    <rect key="frame" x="106" y="10" width="259" height="14.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                     <color key="textColor" red="1" green="0.40000000000000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enforce Symmetry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeO-GP-viR" userLabel="Enforce Symmetry">
+                    <rect key="frame" x="276" y="30" width="89" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" red="1" green="0.40000000000000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2fq-vr-gjk" userLabel="Symmetry Switch">
+                    <rect key="frame" x="316" y="47" width="51" height="31"/>
+                    <color key="tintColor" red="1" green="0.40000000000000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="onTintColor" red="1" green="0.40000000000000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                </switch>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <gestureRecognizers/>
@@ -48,14 +59,19 @@
                 <constraint firstItem="emb-sj-E5H" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="26Z-n8-zZj"/>
                 <constraint firstItem="Mto-hF-doD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4sE-i4-Cih"/>
                 <constraint firstItem="emb-sj-E5H" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8ot-SQ-0zZ"/>
-                <constraint firstItem="g5g-V3-eKY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="Bqo-21-2jF"/>
+                <constraint firstItem="g5g-V3-eKY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="Bqo-21-2jF"/>
                 <constraint firstAttribute="bottom" secondItem="Mto-hF-doD" secondAttribute="bottom" id="R5W-mF-Vb6"/>
-                <constraint firstItem="g5g-V3-eKY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="UGH-bx-73c"/>
+                <constraint firstItem="BeO-GP-viR" firstAttribute="trailing" secondItem="2fq-vr-gjk" secondAttribute="trailing" id="Ste-X2-tie"/>
                 <constraint firstItem="emb-sj-E5H" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="cpI-83-vvS"/>
-                <constraint firstItem="g5g-V3-eKY" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.9" id="kdt-58-N6d"/>
+                <constraint firstAttribute="trailing" secondItem="2fq-vr-gjk" secondAttribute="trailing" constant="10" id="eUK-B3-vBc"/>
+                <constraint firstItem="BeO-GP-viR" firstAttribute="trailing" secondItem="g5g-V3-eKY" secondAttribute="trailing" id="fnR-vg-Ahe"/>
+                <constraint firstAttribute="trailing" secondItem="g5g-V3-eKY" secondAttribute="trailing" constant="10" id="gHw-k8-9em"/>
                 <constraint firstItem="emb-sj-E5H" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="mGs-0w-H8l"/>
                 <constraint firstItem="Mto-hF-doD" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="ok5-1Q-cT0"/>
+                <constraint firstItem="2fq-vr-gjk" firstAttribute="top" secondItem="BeO-GP-viR" secondAttribute="bottom" constant="5" id="q7e-6e-Nsy"/>
+                <constraint firstItem="BeO-GP-viR" firstAttribute="top" secondItem="g5g-V3-eKY" secondAttribute="bottom" constant="5.5" id="wQi-k1-qyO"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
             <connections>
                 <outletCollection property="gestureRecognizers" destination="SRa-4G-Qhn" appends="YES" id="k9Y-vt-f2X"/>
             </connections>

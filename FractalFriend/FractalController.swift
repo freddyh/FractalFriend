@@ -13,7 +13,7 @@ class FractalController: UIViewController {
     @IBOutlet weak var fractalView: FractalView!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet var singleTapRecognizer: UITapGestureRecognizer!
-    
+    @IBOutlet weak var symmetrySwitch: UISwitch!
     
     let radianData = Array(stride(from: 0.1, to: 3.2, by: 0.1))
     let branchData = Array(stride(from: 2, to: 18, by: 1))
@@ -28,16 +28,16 @@ class FractalController: UIViewController {
     }
     
     @IBAction func screenTapped(_ sender: Any) {
-        
         generateNewFractal()
     }
 
     func randomizePickerValues() -> Void {
+        
         // choose three random indices
         let leftAngle = Int(arc4random_uniform(UInt32(self.radianData.count)))
-        let rightAngle = Int(arc4random_uniform(UInt32(self.radianData.count)))
+        let rightAngle = symmetrySwitch.isOn ? leftAngle : Int(arc4random_uniform(UInt32(self.radianData.count)))
         let depth = Int(arc4random_uniform(UInt32(self.branchData.count)))
-        
+                
         // animate the picker to display the values at the random index
         self.pickerView.selectRow(leftAngle, inComponent: 0, animated: true)
         self.pickerView.selectRow(rightAngle, inComponent: 1, animated: true)
@@ -53,6 +53,10 @@ class FractalController: UIViewController {
     func generateNewFractal() -> Void {
         randomizePickerValues()
         updateFractalView()
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
 }
