@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var fractalView: FractalView!
     
     @IBAction func depthChanged(_ sender: UIStepper) {
-        fractalView.depth = CGFloat(sender.value)
+        fractalView.depth = Int(sender.value)
     }
     
     @IBAction func leftAngleChanged(_ sender: UIStepper) {

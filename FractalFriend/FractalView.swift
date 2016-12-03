@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FractalView: UIScrollView {
+class FractalView: UIView {
     
     let PI = 3.141592
     let maxDepth = 15
@@ -25,7 +25,7 @@ class FractalView: UIScrollView {
         }
     }
     
-    var depth:CGFloat = 1 {
+    var depth:Int = 1 {
         didSet {
             self.setNeedsDisplay()
         }
@@ -33,19 +33,20 @@ class FractalView: UIScrollView {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        // draw the first parent branch
-        // at PI / 2 radians (90 degrees)
-        let treeOrigin = CGPoint.init(x: self.bounds.width / 2.0, y: self.bounds.height)
-        drawBranch(origin: treeOrigin, angle: PI / 2.0, depth: CGFloat(depth))
+        
+        // origin of the base branch
+        let treeOrigin = CGPoint.init(x: self.bounds.width/2, y: self.bounds.height/2)
+        
+        drawBranch(origin: treeOrigin, angle: PI / 2.0, depth: depth)
     }
     
-    func drawBranch(origin:CGPoint, angle:Double, depth:CGFloat) -> Void {
+    func drawBranch(origin:CGPoint, angle:Double, depth:Int) -> Void {
         
         // calculate the endpoint of this branch
         // calculate the length of the branch based on the current depth and max depth
         let currentDepthDiff = self.depth - depth
-        let initialLength = self.bounds.height / 5.0
-        let maxDepthDiff = CGFloat(maxDepth) - currentDepthDiff
+        let initialLength = self.bounds.height / 20.0
+        let maxDepthDiff = CGFloat(maxDepth - currentDepthDiff)
         let scale = initialLength * ( maxDepthDiff / CGFloat(maxDepth))
         
         let nextX = origin.x + CGFloat(cos(angle)) * scale
@@ -65,10 +66,25 @@ class FractalView: UIScrollView {
     
     func drawBranchSegment(lineWidth:CGFloat, fromPoint:CGPoint, toPoint:CGPoint) -> Void {
         let path = UIBezierPath()
-        UIColor.green.set()
+        let branchColor = UIColor(netHex: 0x00FF80)
+        branchColor.set()
         path.lineWidth = lineWidth
         path.move(to: fromPoint)
         path.addLine(to: toPoint)
         path.stroke()
+    }
+}
+
+extension UIColor {
+    convenience init(red: Int, green: Int, blue: Int) {
+        assert(red >= 0 && red <= 255, "Invalid red component")
+        assert(green >= 0 && green <= 255, "Invalid green component")
+        assert(blue >= 0 && blue <= 255, "Invalid blue component")
+        
+        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
+    }
+    
+    convenience init(netHex:Int) {
+        self.init(red:(netHex >> 16) & 0xff, green:(netHex >> 8) & 0xff, blue:netHex & 0xff)
     }
 }

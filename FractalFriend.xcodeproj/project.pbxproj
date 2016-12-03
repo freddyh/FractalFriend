@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F40C3CC1DF2BD1E00E0F59F /* FractalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F40C3CA1DF2BD1E00E0F59F /* FractalController.swift */; };
+		1F40C3CD1DF2BD1E00E0F59F /* FractalController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F40C3CB1DF2BD1E00E0F59F /* FractalController.xib */; };
 		1FBEC45F1DEAB82F00A9EA1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBEC45E1DEAB82F00A9EA1F /* AppDelegate.swift */; };
 		1FBEC4611DEAB82F00A9EA1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBEC4601DEAB82F00A9EA1F /* ViewController.swift */; };
-		1FBEC4641DEAB82F00A9EA1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBEC4621DEAB82F00A9EA1F /* Main.storyboard */; };
 		1FBEC4661DEAB82F00A9EA1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FBEC4651DEAB82F00A9EA1F /* Assets.xcassets */; };
 		1FBEC4691DEAB82F00A9EA1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBEC4671DEAB82F00A9EA1F /* LaunchScreen.storyboard */; };
 		1FBEC4711DEAB86800A9EA1F /* FractalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBEC4701DEAB86800A9EA1F /* FractalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F40C3CA1DF2BD1E00E0F59F /* FractalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FractalController.swift; sourceTree = "<group>"; };
+		1F40C3CB1DF2BD1E00E0F59F /* FractalController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FractalController.xib; sourceTree = "<group>"; };
 		1FBEC45B1DEAB82F00A9EA1F /* FractalFriend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FractalFriend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FBEC45E1DEAB82F00A9EA1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FBEC4601DEAB82F00A9EA1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1FBEC4631DEAB82F00A9EA1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1FBEC4651DEAB82F00A9EA1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FBEC4681DEAB82F00A9EA1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1FBEC46A1DEAB82F00A9EA1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,11 +60,12 @@
 			children = (
 				1FBEC45E1DEAB82F00A9EA1F /* AppDelegate.swift */,
 				1FBEC4601DEAB82F00A9EA1F /* ViewController.swift */,
-				1FBEC4621DEAB82F00A9EA1F /* Main.storyboard */,
 				1FBEC4651DEAB82F00A9EA1F /* Assets.xcassets */,
 				1FBEC4671DEAB82F00A9EA1F /* LaunchScreen.storyboard */,
 				1FBEC46A1DEAB82F00A9EA1F /* Info.plist */,
 				1FBEC4701DEAB86800A9EA1F /* FractalView.swift */,
+				1F40C3CB1DF2BD1E00E0F59F /* FractalController.xib */,
+				1F40C3CA1DF2BD1E00E0F59F /* FractalController.swift */,
 			);
 			path = FractalFriend;
 			sourceTree = "<group>";
@@ -129,7 +132,7 @@
 			files = (
 				1FBEC4691DEAB82F00A9EA1F /* LaunchScreen.storyboard in Resources */,
 				1FBEC4661DEAB82F00A9EA1F /* Assets.xcassets in Resources */,
-				1FBEC4641DEAB82F00A9EA1F /* Main.storyboard in Resources */,
+				1F40C3CD1DF2BD1E00E0F59F /* FractalController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,20 +146,13 @@
 				1FBEC4711DEAB86800A9EA1F /* FractalView.swift in Sources */,
 				1FBEC4611DEAB82F00A9EA1F /* ViewController.swift in Sources */,
 				1FBEC45F1DEAB82F00A9EA1F /* AppDelegate.swift in Sources */,
+				1F40C3CC1DF2BD1E00E0F59F /* FractalController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1FBEC4621DEAB82F00A9EA1F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1FBEC4631DEAB82F00A9EA1F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1FBEC4671DEAB82F00A9EA1F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -306,6 +302,7 @@
 				1FBEC46F1DEAB82F00A9EA1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
