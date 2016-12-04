@@ -15,7 +15,7 @@ class FractalController: UIViewController {
     @IBOutlet var singleTapRecognizer: UITapGestureRecognizer!
     @IBOutlet weak var symmetrySwitch: UISwitch!
     
-    let radianData = Array(stride(from: 0.1, to: 3.2, by: 0.1))
+    let radianData = Array(stride(from: -2*M_PI, to: 2*M_PI, by: M_PI/120))
     let branchData = Array(stride(from: 2, to: 18, by: 1))
     
     override func viewDidLoad() {
@@ -68,11 +68,22 @@ extension FractalController: UIPickerViewDelegate {
         if component == 2 {
             return String(self.branchData[row])
         }
-        return String(self.radianData[row])
+        return String(format: "%.2f", self.radianData[row])//String(self.radianData[row])
     }
     
     @available(iOS 2.0, *)
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        if self.symmetrySwitch.isOn {
+            if component == 0 {
+                pickerView.selectRow(row, inComponent: 1, animated: true)
+            }
+            
+            if component == 1 {
+                pickerView.selectRow(row, inComponent: 0, animated: true)
+            }
+        }
+        
         updateFractalView()
     }
     

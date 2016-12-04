@@ -12,6 +12,7 @@ class FractalView: UIView {
     
     let PI = 3.141592
     let maxDepth = 18
+    var initialBranchLength: CGFloat = 10
     
     var leftAngle:Double = 0.1 {
         didSet {
@@ -39,8 +40,10 @@ class FractalView: UIView {
             return
         }
         
+        self.initialBranchLength = self.bounds.height / 20.0
+        
         // origin of the base branch
-        let treeOrigin = CGPoint.init(x: self.bounds.width/2, y: self.bounds.height/2)
+        let treeOrigin = CGPoint.init(x: self.bounds.width/2, y: self.bounds.height*0.45)
         
         drawBranch(origin: treeOrigin, angle: PI/2, depth: depth)
     }
@@ -50,9 +53,8 @@ class FractalView: UIView {
         // calculate the endpoint of this branch
         // calculate the length of the branch based on the current depth and max depth
         let currentDepthDiff = self.depth - depth
-        let initialLength = self.bounds.height / 20.0
-        let maxDepthDiff = CGFloat(maxDepth - currentDepthDiff)
-        let scale = initialLength * ( maxDepthDiff / CGFloat(maxDepth))
+        let maxDepthDiff = CGFloat(self.maxDepth - currentDepthDiff)
+        let scale = self.initialBranchLength * ( maxDepthDiff / CGFloat(self.maxDepth))
         
         let nextX = origin.x + CGFloat(cos(angle)) * scale
         let nextY = origin.y - CGFloat(sin(angle)) * scale
@@ -73,7 +75,11 @@ class FractalView: UIView {
     
     func drawBranchSegment(lineWidth:CGFloat, fromPoint:CGPoint, toPoint:CGPoint) -> Void {
         let path = UIBezierPath()
-        let branchColor = UIColor(netHex: 0x00FF80)
+        
+        let distance = hypotf(Float(fromPoint.x - toPoint.x), Float(fromPoint.y - toPoint.y));
+        let s = distance/Float(self.initialBranchLength)
+        let branchColor = UIColor(hue: 0.5, saturation: 0.6, brightness: CGFloat(1.0 - s), alpha: 1.0)
+        
         branchColor.set()
         path.lineWidth = lineWidth
         path.move(to: fromPoint)

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,56 +20,114 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="emb-sj-E5H" customClass="FractalView" customModule="FractalFriend" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                     <color key="backgroundColor" red="0.31764705879999999" green="0.33333333329999998" blue="0.33725490200000002" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <pickerView alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mto-hF-doD">
-                    <rect key="frame" x="0.0" y="451" width="375" height="216"/>
+                    <rect key="frame" x="0.0" y="264" width="320" height="216"/>
                     <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="5m5-wi-UkW"/>
                         <outlet property="delegate" destination="-1" id="u0a-gF-HyU"/>
                     </connections>
                 </pickerView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap anywhere to generate a random fractal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5g-V3-eKY">
-                    <rect key="frame" x="106" y="10" width="259" height="14.5"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                    <color key="textColor" red="1" green="0.40000000000000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap above or use the picker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5g-V3-eKY" userLabel="Tap Label">
+                    <rect key="frame" x="10" y="274" width="300" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="HE5-Gz-iF0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="radians" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1B-cv-L5h" userLabel="Radian Right Label">
+                    <rect key="frame" x="136.5" y="450" width="47.5" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="5a0-FN-hlS"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="depth" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnB-sZ-91c" userLabel="Depth Label">
+                    <rect key="frame" x="277" y="450" width="38" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="Nux-Vc-fKy"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enforce Symmetry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeO-GP-viR" userLabel="Enforce Symmetry">
-                    <rect key="frame" x="276" y="30" width="89" height="12"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <rect key="frame" x="201" y="5" width="109" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                     <color key="textColor" red="1" green="0.40000000000000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2fq-vr-gjk" userLabel="Symmetry Switch">
-                    <rect key="frame" x="316" y="47" width="51" height="31"/>
+                    <rect key="frame" x="261" y="24.5" width="51" height="31"/>
                     <color key="tintColor" red="1" green="0.40000000000000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="onTintColor" red="1" green="0.40000000000000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                 </switch>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="radians" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nmc-dT-NaQ" userLabel="Left Right Label">
+                    <rect key="frame" x="16" y="450" width="47.5" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="vAg-b1-vm4"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="emb-sj-E5H" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="26Z-n8-zZj"/>
+                <constraint firstItem="g5g-V3-eKY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="39v-NT-QDB"/>
                 <constraint firstItem="Mto-hF-doD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4sE-i4-Cih"/>
+                <constraint firstItem="g5g-V3-eKY" firstAttribute="top" secondItem="Mto-hF-doD" secondAttribute="top" constant="10" id="7md-ah-4hC"/>
                 <constraint firstItem="emb-sj-E5H" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8ot-SQ-0zZ"/>
-                <constraint firstItem="g5g-V3-eKY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="Bqo-21-2jF"/>
+                <constraint firstItem="BeO-GP-viR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="5" id="F8d-gG-VXn"/>
+                <constraint firstItem="Nmc-dT-NaQ" firstAttribute="centerY" secondItem="p1B-cv-L5h" secondAttribute="centerY" id="LI8-3E-AqP"/>
                 <constraint firstAttribute="bottom" secondItem="Mto-hF-doD" secondAttribute="bottom" id="R5W-mF-Vb6"/>
                 <constraint firstItem="BeO-GP-viR" firstAttribute="trailing" secondItem="2fq-vr-gjk" secondAttribute="trailing" id="Ste-X2-tie"/>
+                <constraint firstItem="qnB-sZ-91c" firstAttribute="centerY" secondItem="p1B-cv-L5h" secondAttribute="centerY" id="YFO-s2-9tz"/>
                 <constraint firstItem="emb-sj-E5H" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="cpI-83-vvS"/>
+                <constraint firstItem="qnB-sZ-91c" firstAttribute="trailing" secondItem="Mto-hF-doD" secondAttribute="trailing" constant="-5" id="e5Q-LI-vd6"/>
                 <constraint firstAttribute="trailing" secondItem="2fq-vr-gjk" secondAttribute="trailing" constant="10" id="eUK-B3-vBc"/>
                 <constraint firstItem="BeO-GP-viR" firstAttribute="trailing" secondItem="g5g-V3-eKY" secondAttribute="trailing" id="fnR-vg-Ahe"/>
                 <constraint firstAttribute="trailing" secondItem="g5g-V3-eKY" secondAttribute="trailing" constant="10" id="gHw-k8-9em"/>
+                <constraint firstItem="p1B-cv-L5h" firstAttribute="bottom" secondItem="Mto-hF-doD" secondAttribute="bottom" constant="-5" id="jXh-DG-F05"/>
                 <constraint firstItem="emb-sj-E5H" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="mGs-0w-H8l"/>
+                <constraint firstItem="Nmc-dT-NaQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="mgl-xr-aBm"/>
                 <constraint firstItem="Mto-hF-doD" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="ok5-1Q-cT0"/>
                 <constraint firstItem="2fq-vr-gjk" firstAttribute="top" secondItem="BeO-GP-viR" secondAttribute="bottom" constant="5" id="q7e-6e-Nsy"/>
-                <constraint firstItem="BeO-GP-viR" firstAttribute="top" secondItem="g5g-V3-eKY" secondAttribute="bottom" constant="5.5" id="wQi-k1-qyO"/>
+                <constraint firstItem="p1B-cv-L5h" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tbR-l7-soA"/>
+                <constraint firstAttribute="trailing" secondItem="BeO-GP-viR" secondAttribute="trailing" constant="10" id="uje-be-044"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <connections>
