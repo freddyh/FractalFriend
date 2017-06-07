@@ -20,24 +20,18 @@ class FractalView: UIView {
     
     var treeDepth: Int = 1 {
         didSet {
-            NSLog("updating tree depth \(treeDepth)")
-            NSLog("updating tree depth \(oldValue)")
             setNeedsDisplay()
         }
     }
     
     var leftTreeAngle: Double = 3.14 {
         didSet {
-            NSLog("updating left tree angle \(leftTreeAngle)")
-            NSLog("updating left tree angle \(oldValue)")
             setNeedsDisplay()
         }
     }
     
     var rightTreeAngle: Double = 3.14 {
         didSet {
-            NSLog("updating right tree angle \(rightTreeAngle)")
-            NSLog("updating right tree angle \(oldValue)")
             setNeedsDisplay()
         }
     }

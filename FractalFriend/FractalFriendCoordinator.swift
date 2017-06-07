@@ -16,7 +16,7 @@ class FractalFriendCoordinator {
         let loginController = LoginViewController(nibName: String.init(describing: LoginViewController.classForCoder()), bundle: nil)
 
         var root = UIViewController()
-        if let u = Auth.auth().currentUser {
+        if Auth.auth().currentUser != nil {
             root = fractalController
         } else {
             root = loginController
