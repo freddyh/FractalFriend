@@ -170,7 +170,9 @@ class FractalController: UIViewController {
     }
     
     @IBAction func symmetrySwitchValueChanged(_ sender: UISwitch) {
-        
+        self.fractalView.leftTreeAngle = self.fractalView.rightTreeAngle
+        self.leftTreeSlider.setValue(self.rightTreeSlider.value, animated: true)
+        updateSliderLabels()
     }
     
     @IBAction func logoutButtonTapped(_ sender: UIButton) {

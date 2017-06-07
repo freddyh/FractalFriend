@@ -45,7 +45,6 @@ class FractalView: UIView {
         // origin of the base branch
         let treeOrigin = CGPoint.init(x: self.bounds.width/2, y: self.bounds.height*0.45)
         self.drawBranch(origin: treeOrigin, angle: Double.pi/2, depth: maxDepth > treeDepth ? treeDepth : maxDepth)
-//        self.drawBranch(origin: treeOrigin, angle: Double.pi/2, depth: treeDepth)
     }
     
     public func toImage() -> UIImage {
@@ -76,13 +75,6 @@ class FractalView: UIView {
         let endpoint = CGPoint.init(x: nextX, y: nextY)
         
         if depth > 0 {
-            // trying to make it work with dispatch on main queue and async queues
-            
-//            DispatchQueue.main.async {
-//                self.drawBranchSegment(lineWidth: 1.0, fromPoint: origin, toPoint:endpoint)
-//                self.drawBranch(origin: endpoint, angle: angle + self.fractalData.leftTreeAngle, depth: depth - 1)
-//                self.drawBranch(origin: endpoint, angle: angle - self.fractalData.rightTreeAngle, depth: depth - 1)
-//            }
             // draw a line to the endpoint
             drawBranchSegment(lineWidth: 1.0, fromPoint: origin, toPoint:endpoint)
             
@@ -104,22 +96,5 @@ class FractalView: UIView {
         path.move(to: fromPoint)
         path.addLine(to: toPoint)
         path.stroke()
-//        DispatchQueue.main.async {
-//            
-//        }
-    }
-}
-
-extension UIColor {
-    convenience init(red: Int, green: Int, blue: Int) {
-        assert(red >= 0 && red <= 255, "Invalid red component")
-        assert(green >= 0 && green <= 255, "Invalid green component")
-        assert(blue >= 0 && blue <= 255, "Invalid blue component")
-        
-        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
-    }
-    
-    convenience init(netHex:Int) {
-        self.init(red:(netHex >> 16) & 0xff, green:(netHex >> 8) & 0xff, blue:netHex & 0xff)
     }
 }

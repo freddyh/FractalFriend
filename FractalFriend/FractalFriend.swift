@@ -8,7 +8,7 @@
 
 import Foundation
 import FirebaseDatabase
-// fractalFriends
+
 struct FractalFriend {
     let key: String!
     let url: String!
