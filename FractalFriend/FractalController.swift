@@ -11,43 +11,82 @@ import UIKit
 class FractalController: UIViewController {
 
     @IBOutlet weak var fractalView: FractalView!
-    @IBOutlet weak var pickerView: UIPickerView!
-    @IBOutlet var singleTapRecognizer: UITapGestureRecognizer!
     @IBOutlet weak var symmetrySwitch: UISwitch!
+    @IBOutlet weak var leftTreeSlider: UISlider!
+    @IBOutlet weak var rightTreeSlider: UISlider!
+    @IBOutlet weak var depthSlider: UISlider!
+    @IBOutlet weak var leftTreeValueLabel: UILabel!
+    @IBOutlet weak var rightTreeValueLabel: UILabel!
+    @IBOutlet weak var depthValueLabel: UILabel!
     
-    let radianData = Array(stride(from: -2*M_PI, to: 2*M_PI, by: M_PI/120))
+    let radianData = Array(stride(from: -2*Double.pi, to: 2*Double.pi, by: Double.pi/120))
     let branchData = Array(stride(from: 2, to: 18, by: 1))
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        pickerView.delegate = self;
-        pickerView.dataSource = self;
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareButtonTapped(sender:)))
+        
+        self.leftTreeSlider.minimumValue = Float(self.radianData.first!)
+        self.rightTreeSlider.minimumValue = Float(self.radianData.first!)
+        
+        self.leftTreeSlider.maximumValue = Float(self.radianData.last!)
+        self.rightTreeSlider.maximumValue = Float(self.radianData.last!)
         
         generateNewFractal()
     }
     
-    @IBAction func screenTapped(_ sender: Any) {
-        generateNewFractal()
+    func shareButtonTapped(sender:UIBarButtonItem) -> Void {
+        let ac = UIActivityViewController(activityItems: [self.fractalView.toImage()], applicationActivities: nil)
+        self.navigationController?.present(ac, animated: true, completion: nil)
+    }
+    
+    func saveFractalToLibrary() -> Void {
+        let screenShot = self.fractalView.toImage()
+        UIImageWriteToSavedPhotosAlbum(screenShot, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
 
+    func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            let ac = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        } else {
+            let ac = UIAlertController(title: "Saved!", message: "The binary fractral tree has been saved to your photos.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        }
+    }
+    
     func randomizePickerValues() -> Void {
         
         // choose three random indices
-        let leftAngle = Int(arc4random_uniform(UInt32(self.radianData.count)))
-        let rightAngle = symmetrySwitch.isOn ? leftAngle : Int(arc4random_uniform(UInt32(self.radianData.count)))
-        let depth = Int(arc4random_uniform(UInt32(self.branchData.count)))
-                
+        let leftAngleIndex = Int(arc4random_uniform(UInt32(self.radianData.count)))
+        let rightAngleIndex = symmetrySwitch.isOn ? leftAngleIndex : Int(arc4random_uniform(UInt32(self.radianData.count)))
+        let depthIndex = Int(arc4random_uniform(UInt32(self.branchData.count)))
+        
         // animate the picker to display the values at the random index
-        self.pickerView.selectRow(leftAngle, inComponent: 0, animated: true)
-        self.pickerView.selectRow(rightAngle, inComponent: 1, animated: true)
-        self.pickerView.selectRow(depth, inComponent: 2, animated: true)
+        self.leftTreeSlider.setValue(Float(self.radianData[leftAngleIndex]), animated: true);
+        self.rightTreeSlider.setValue(Float(self.radianData[rightAngleIndex]), animated: true)
+        self.depthSlider.setValue(Float(self.branchData[depthIndex]), animated: true)
+        
+        updateSliderLabels()
+    }
+    
+    func updateSliderLabels() -> Void {
+        self.leftTreeValueLabel.text = String(format: "%.2f", self.leftTreeSlider.value)
+        self.rightTreeValueLabel.text = String(format: "%.2f", self.rightTreeSlider.value)
+        self.depthValueLabel.text = String(format: "\(Int(self.depthSlider.value))" )
     }
     
     func updateFractalView() -> Void {
-        self.fractalView.leftAngle = self.radianData[self.pickerView.selectedRow(inComponent: 0)]
-        self.fractalView.rightAngle = self.radianData[self.pickerView.selectedRow(inComponent: 1)]
-        self.fractalView.depth = self.branchData[self.pickerView.selectedRow(inComponent: 2)]
+        self.fractalView.leftTreeAngle = Double(Int(self.leftTreeSlider.value))
+        self.fractalView.rightTreeAngle = Double(Int(self.rightTreeSlider.value))
+        self.fractalView.treeDepth = Int(self.depthSlider.value)
+//        self.fractalView.setNeedsDisplay()
+//        DispatchQueue.global(qos: .background).async {
+//            
+//        }
     }
     
     func generateNewFractal() -> Void {
@@ -55,53 +94,34 @@ class FractalController: UIViewController {
         updateFractalView()
     }
     
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
-    
-}
-
-extension FractalController: UIPickerViewDelegate {
-    
-    @available(iOS 2.0, *)
-    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if component == 2 {
-            return String(self.branchData[row])
-        }
-        return String(format: "%.2f", self.radianData[row])//String(self.radianData[row])
-    }
-    
-    @available(iOS 2.0, *)
-    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
+    @IBAction func leftTreeSliderChanged(_ sender: UISlider) {
+        let roundedValue = Double(roundf(sender.value * 100) / 100)
         if self.symmetrySwitch.isOn {
-            if component == 0 {
-                pickerView.selectRow(row, inComponent: 1, animated: true)
-            }
-            
-            if component == 1 {
-                pickerView.selectRow(row, inComponent: 0, animated: true)
-            }
+            self.fractalView.rightTreeAngle = roundedValue
+            self.rightTreeSlider.setValue(Float(roundedValue), animated: true)
         }
+        self.fractalView.leftTreeAngle = roundedValue
+        self.fractalView.setNeedsDisplay()
+        updateSliderLabels()
+    }
+    
+    @IBAction func rightTreeSliderChanged(_ sender: UISlider) {
+        let roundedValue = Double(roundf(sender.value * 100) / 100)
+        if self.symmetrySwitch.isOn {
+            self.fractalView.leftTreeAngle = roundedValue
+            self.leftTreeSlider.setValue(Float(roundedValue), animated: true)
+        }
+        self.fractalView.rightTreeAngle = roundedValue
+        updateSliderLabels()
+    }
+    
+    @IBAction func depthSliderChanged(_ sender: UISlider) {
+        self.fractalView.treeDepth = Int(self.depthSlider.value)
+        updateSliderLabels()
+    }
+    
+    @IBAction func symmetrySwitchValueChanged(_ sender: UISwitch) {
         
-        updateFractalView()
-    }
-    
-}
-
-extension FractalController: UIPickerViewDataSource {
-    
-    @available(iOS 2.0, *)
-    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if component == 2 {
-            return self.branchData.count
-        }
-        return self.radianData.count
-    }
-
-    @available(iOS 2.0, *)
-    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 3
     }
     
 }

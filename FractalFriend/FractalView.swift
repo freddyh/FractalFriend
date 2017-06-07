@@ -10,66 +10,91 @@ import UIKit
 
 class FractalView: UIView {
     
-    let PI = 3.141592
-    let maxDepth = 18
+    let maxDepth = 13
     var initialBranchLength: CGFloat = 10
     
-    var leftAngle:Double = 0.1 {
+    let radianData = Array(stride(from: -2*Double.pi, to: 2*Double.pi, by: Double.pi/120))
+    let branchData = Array(stride(from: 2, to: 18, by: 1))
+    
+    var isDrawing: Bool = false;
+    
+    var treeDepth: Int = 1 {
         didSet {
-            self.setNeedsDisplay()
+            NSLog("updating tree depth \(treeDepth)")
+            NSLog("updating tree depth \(oldValue)")
+            setNeedsDisplay()
         }
     }
     
-    var rightAngle:Double = 0.1 {
+    var leftTreeAngle: Double = 3.14 {
         didSet {
-            self.setNeedsDisplay()
+            NSLog("updating left tree angle \(leftTreeAngle)")
+            NSLog("updating left tree angle \(oldValue)")
+            setNeedsDisplay()
         }
     }
     
-    var depth:Int = 1 {
+    var rightTreeAngle: Double = 3.14 {
         didSet {
-            self.setNeedsDisplay()
+            NSLog("updating right tree angle \(rightTreeAngle)")
+            NSLog("updating right tree angle \(oldValue)")
+            setNeedsDisplay()
         }
     }
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
-        // don't redraw if max depth is exceeded
-        if depth > maxDepth {
-            return
-        }
-        
+        // length of the initial branch
         self.initialBranchLength = self.bounds.height / 20.0
         
         // origin of the base branch
         let treeOrigin = CGPoint.init(x: self.bounds.width/2, y: self.bounds.height*0.45)
+        self.drawBranch(origin: treeOrigin, angle: Double.pi/2, depth: maxDepth > treeDepth ? treeDepth : maxDepth)
+//        self.drawBranch(origin: treeOrigin, angle: Double.pi/2, depth: treeDepth)
+    }
+    
+    public func toImage() -> UIImage {
+        // Begin context
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale)
         
-        drawBranch(origin: treeOrigin, angle: PI/2, depth: depth)
+        // Draw view in that context
+        drawHierarchy(in: self.bounds, afterScreenUpdates: false)
+        
+        // And finally, get image
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return image!
     }
     
     func drawBranch(origin:CGPoint, angle:Double, depth:Int) -> Void {
         
         // calculate the endpoint of this branch
         // calculate the length of the branch based on the current depth and max depth
-        let currentDepthDiff = self.depth - depth
+        let currentDepthDiff = treeDepth - depth
         let maxDepthDiff = CGFloat(self.maxDepth - currentDepthDiff)
         let scale = self.initialBranchLength * ( maxDepthDiff / CGFloat(self.maxDepth))
         
         let nextX = origin.x + CGFloat(cos(angle)) * scale
         let nextY = origin.y - CGFloat(sin(angle)) * scale
         
-        //NSLog("\(origin.x - nextX)")        
-
         let endpoint = CGPoint.init(x: nextX, y: nextY)
         
         if depth > 0 {
+            // trying to make it work with dispatch on main queue and async queues
+            
+//            DispatchQueue.main.async {
+//                self.drawBranchSegment(lineWidth: 1.0, fromPoint: origin, toPoint:endpoint)
+//                self.drawBranch(origin: endpoint, angle: angle + self.fractalData.leftTreeAngle, depth: depth - 1)
+//                self.drawBranch(origin: endpoint, angle: angle - self.fractalData.rightTreeAngle, depth: depth - 1)
+//            }
             // draw a line to the endpoint
             drawBranchSegment(lineWidth: 1.0, fromPoint: origin, toPoint:endpoint)
             
             // draw the children branches
-            drawBranch(origin: endpoint, angle: angle + leftAngle, depth: depth - 1)
-            drawBranch(origin: endpoint, angle: angle - rightAngle, depth: depth - 1)
+            drawBranch(origin: endpoint, angle: angle + leftTreeAngle, depth: depth - 1)
+            drawBranch(origin: endpoint, angle: angle - rightTreeAngle, depth: depth - 1)
         }
     }
     
@@ -78,13 +103,16 @@ class FractalView: UIView {
         
         let distance = hypotf(Float(fromPoint.x - toPoint.x), Float(fromPoint.y - toPoint.y));
         let s = distance/Float(self.initialBranchLength)
-        let branchColor = UIColor(hue: 0.5, saturation: 0.6, brightness: CGFloat(1.0 - s), alpha: 1.0)
+        let branchColor = UIColor(hue: 0.5, saturation: 0.8, brightness: CGFloat(1.0 - s), alpha: 1.0)
         
         branchColor.set()
         path.lineWidth = lineWidth
         path.move(to: fromPoint)
         path.addLine(to: toPoint)
         path.stroke()
+//        DispatchQueue.main.async {
+//            
+//        }
     }
 }
 

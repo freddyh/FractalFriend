@@ -1,19 +1,23 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FractalController" customModule="FractalFriend" customModuleProvider="target">
             <connections>
+                <outlet property="depthSlider" destination="Xmu-C8-axN" id="n0Z-TQ-UQJ"/>
+                <outlet property="depthValueLabel" destination="vrt-bX-51k" id="dqS-gd-bSC"/>
                 <outlet property="fractalView" destination="emb-sj-E5H" id="arL-z3-NNK"/>
-                <outlet property="pickerView" destination="Mto-hF-doD" id="cIJ-L5-JQW"/>
-                <outlet property="singleTapRecognizer" destination="SRa-4G-Qhn" id="dB2-fS-pbs"/>
+                <outlet property="leftTreeSlider" destination="tI1-yf-nNf" id="qwj-Uy-ab2"/>
+                <outlet property="leftTreeValueLabel" destination="Ico-7O-3eO" id="29V-Dp-LuA"/>
+                <outlet property="rightTreeSlider" destination="V4z-PX-PyX" id="WU5-wX-fqs"/>
+                <outlet property="rightTreeValueLabel" destination="jzq-pK-U3B" id="nSU-qZ-DQQ"/>
                 <outlet property="symmetrySwitch" destination="2fq-vr-gjk" id="WNI-5M-g9H"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -25,120 +29,152 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="emb-sj-E5H" customClass="FractalView" customModule="FractalFriend" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                    <color key="backgroundColor" red="0.31764705879999999" green="0.33333333329999998" blue="0.33725490200000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
-                <pickerView alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mto-hF-doD">
-                    <rect key="frame" x="0.0" y="264" width="320" height="216"/>
-                    <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="5m5-wi-UkW"/>
-                        <outlet property="delegate" destination="-1" id="u0a-gF-HyU"/>
-                    </connections>
-                </pickerView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap above or use the picker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5g-V3-eKY" userLabel="Tap Label">
-                    <rect key="frame" x="10" y="274" width="300" height="25"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="25" id="HE5-Gz-iF0"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <integer key="value" value="8"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="radians" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1B-cv-L5h" userLabel="Radian Right Label">
-                    <rect key="frame" x="136.5" y="450" width="47.5" height="25"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="25" id="5a0-FN-hlS"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <integer key="value" value="8"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="depth" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnB-sZ-91c" userLabel="Depth Label">
-                    <rect key="frame" x="277" y="450" width="38" height="25"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="25" id="Nux-Vc-fKy"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <integer key="value" value="8"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enforce Symmetry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeO-GP-viR" userLabel="Enforce Symmetry">
-                    <rect key="frame" x="201" y="5" width="109" height="14.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Symmetry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeO-GP-viR" userLabel="Enforce Symmetry Label">
+                    <rect key="frame" x="249.5" y="322" width="60.5" height="14.5"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                     <color key="textColor" red="1" green="0.40000000000000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2fq-vr-gjk" userLabel="Symmetry Switch">
-                    <rect key="frame" x="261" y="24.5" width="51" height="31"/>
+                    <rect key="frame" x="261" y="341.5" width="51" height="31"/>
                     <color key="tintColor" red="1" green="0.40000000000000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="onTintColor" red="1" green="0.40000000000000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="symmetrySwitchValueChanged:" destination="-1" eventType="valueChanged" id="g0u-5s-mU3"/>
+                    </connections>
                 </switch>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="radians" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nmc-dT-NaQ" userLabel="Left Right Label">
-                    <rect key="frame" x="16" y="450" width="47.5" height="25"/>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rDw-tl-ZGy" userLabel="Labels Stack View">
+                    <rect key="frame" x="10" y="402.5" width="300" height="13.5"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Left Tree Angle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nmc-dT-NaQ" userLabel="Left Tree Angle Label">
+                            <rect key="frame" x="0.0" y="0.0" width="86.5" height="13.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Right Tree Angle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1B-cv-L5h" userLabel="Right Tree Angle Label">
+                            <rect key="frame" x="106.5" y="0.0" width="87" height="13.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tree Depth" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnB-sZ-91c" userLabel="Depth Label">
+                            <rect key="frame" x="213.5" y="0.0" width="86.5" height="13.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="firstBaseline" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fZQ-Yt-CwN" userLabel="Values Stack View">
+                    <rect key="frame" x="10" y="418" width="300" height="17"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="radians" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ico-7O-3eO" userLabel="Left Tree Value">
+                            <rect key="frame" x="0.0" y="0.0" width="96.5" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="depth" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzq-pK-U3B" userLabel="Right Tree Value">
+                            <rect key="frame" x="101.5" y="0.0" width="97" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" verticalHuggingPriority="251" text="666" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrt-bX-51k" userLabel="Depth Value">
+                            <rect key="frame" x="203.5" y="0.0" width="96.5" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="akC-cO-QgB" userLabel="Slider Stack View">
+                    <rect key="frame" x="10" y="440" width="300" height="30"/>
+                    <subviews>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="80" translatesAutoresizingMaskIntoConstraints="NO" id="tI1-yf-nNf">
+                            <rect key="frame" x="-2" y="0.0" width="90.5" height="31"/>
+                            <color key="tintColor" red="1" green="0.40000000000000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="leftTreeSliderChanged:" destination="-1" eventType="valueChanged" id="bZq-pS-q6d"/>
+                            </connections>
+                        </slider>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="V4z-PX-PyX">
+                            <rect key="frame" x="104.5" y="0.0" width="91" height="31"/>
+                            <color key="tintColor" red="1" green="0.40000000000000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="rightTreeSliderChanged:" destination="-1" eventType="valueChanged" id="8bm-qM-ujh"/>
+                            </connections>
+                        </slider>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="2" maxValue="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xmu-C8-axN" userLabel="Depth Slider">
+                            <rect key="frame" x="211.5" y="0.0" width="90.5" height="31"/>
+                            <color key="tintColor" red="1" green="0.40000000000000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="depthSliderChanged:" destination="-1" eventType="valueChanged" id="mwQ-9r-yst"/>
+                            </connections>
+                        </slider>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="25" id="vAg-b1-vm4"/>
+                        <constraint firstAttribute="height" constant="30" id="c6N-Hc-thc"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <integer key="value" value="8"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </label>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="emb-sj-E5H" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="26Z-n8-zZj"/>
-                <constraint firstItem="g5g-V3-eKY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="39v-NT-QDB"/>
-                <constraint firstItem="Mto-hF-doD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4sE-i4-Cih"/>
-                <constraint firstItem="g5g-V3-eKY" firstAttribute="top" secondItem="Mto-hF-doD" secondAttribute="top" constant="10" id="7md-ah-4hC"/>
+                <constraint firstItem="fZQ-Yt-CwN" firstAttribute="top" secondItem="rDw-tl-ZGy" secondAttribute="bottom" constant="2" id="41V-dn-OUx"/>
                 <constraint firstItem="emb-sj-E5H" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8ot-SQ-0zZ"/>
-                <constraint firstItem="BeO-GP-viR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="5" id="F8d-gG-VXn"/>
-                <constraint firstItem="Nmc-dT-NaQ" firstAttribute="centerY" secondItem="p1B-cv-L5h" secondAttribute="centerY" id="LI8-3E-AqP"/>
-                <constraint firstAttribute="bottom" secondItem="Mto-hF-doD" secondAttribute="bottom" id="R5W-mF-Vb6"/>
+                <constraint firstItem="rDw-tl-ZGy" firstAttribute="top" secondItem="2fq-vr-gjk" secondAttribute="bottom" constant="30" id="F1S-Un-792"/>
+                <constraint firstAttribute="bottom" secondItem="akC-cO-QgB" secondAttribute="bottom" constant="10" id="Hpb-x2-NcA"/>
+                <constraint firstItem="fZQ-Yt-CwN" firstAttribute="centerX" secondItem="akC-cO-QgB" secondAttribute="centerX" id="MCu-aT-QYn"/>
+                <constraint firstItem="rDw-tl-ZGy" firstAttribute="width" secondItem="fZQ-Yt-CwN" secondAttribute="width" id="Mum-sd-kqf"/>
                 <constraint firstItem="BeO-GP-viR" firstAttribute="trailing" secondItem="2fq-vr-gjk" secondAttribute="trailing" id="Ste-X2-tie"/>
-                <constraint firstItem="qnB-sZ-91c" firstAttribute="centerY" secondItem="p1B-cv-L5h" secondAttribute="centerY" id="YFO-s2-9tz"/>
                 <constraint firstItem="emb-sj-E5H" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="cpI-83-vvS"/>
-                <constraint firstItem="qnB-sZ-91c" firstAttribute="trailing" secondItem="Mto-hF-doD" secondAttribute="trailing" constant="-5" id="e5Q-LI-vd6"/>
                 <constraint firstAttribute="trailing" secondItem="2fq-vr-gjk" secondAttribute="trailing" constant="10" id="eUK-B3-vBc"/>
-                <constraint firstItem="BeO-GP-viR" firstAttribute="trailing" secondItem="g5g-V3-eKY" secondAttribute="trailing" id="fnR-vg-Ahe"/>
-                <constraint firstAttribute="trailing" secondItem="g5g-V3-eKY" secondAttribute="trailing" constant="10" id="gHw-k8-9em"/>
-                <constraint firstItem="p1B-cv-L5h" firstAttribute="bottom" secondItem="Mto-hF-doD" secondAttribute="bottom" constant="-5" id="jXh-DG-F05"/>
+                <constraint firstItem="akC-cO-QgB" firstAttribute="top" secondItem="fZQ-Yt-CwN" secondAttribute="bottom" constant="5" id="m8k-cm-HwA"/>
                 <constraint firstItem="emb-sj-E5H" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="mGs-0w-H8l"/>
-                <constraint firstItem="Nmc-dT-NaQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="mgl-xr-aBm"/>
-                <constraint firstItem="Mto-hF-doD" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="ok5-1Q-cT0"/>
+                <constraint firstItem="fZQ-Yt-CwN" firstAttribute="width" secondItem="akC-cO-QgB" secondAttribute="width" id="mfU-j1-ZAt"/>
+                <constraint firstAttribute="trailing" secondItem="akC-cO-QgB" secondAttribute="trailing" constant="10" id="nKh-YA-zDX"/>
                 <constraint firstItem="2fq-vr-gjk" firstAttribute="top" secondItem="BeO-GP-viR" secondAttribute="bottom" constant="5" id="q7e-6e-Nsy"/>
-                <constraint firstItem="p1B-cv-L5h" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tbR-l7-soA"/>
+                <constraint firstItem="rDw-tl-ZGy" firstAttribute="centerX" secondItem="fZQ-Yt-CwN" secondAttribute="centerX" id="txK-B7-Dda"/>
                 <constraint firstAttribute="trailing" secondItem="BeO-GP-viR" secondAttribute="trailing" constant="10" id="uje-be-044"/>
+                <constraint firstItem="akC-cO-QgB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="wTD-bP-6ap"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
-            <connections>
-                <outletCollection property="gestureRecognizers" destination="SRa-4G-Qhn" appends="YES" id="k9Y-vt-f2X"/>
-            </connections>
-            <point key="canvasLocation" x="34.5" y="53.5"/>
+            <point key="canvasLocation" x="34" y="53"/>
         </view>
-        <tapGestureRecognizer id="SRa-4G-Qhn">
-            <connections>
-                <action selector="screenTapped:" destination="-1" id="Y7r-5J-srx"/>
-            </connections>
-        </tapGestureRecognizer>
     </objects>
 </document>

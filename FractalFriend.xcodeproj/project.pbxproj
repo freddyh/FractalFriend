@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		1F40C3CC1DF2BD1E00E0F59F /* FractalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F40C3CA1DF2BD1E00E0F59F /* FractalController.swift */; };
 		1F40C3CD1DF2BD1E00E0F59F /* FractalController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F40C3CB1DF2BD1E00E0F59F /* FractalController.xib */; };
+		1F51E7A71DF7E5D900F1EFA3 /* FractalFriendCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F51E7A61DF7E5D900F1EFA3 /* FractalFriendCoordinator.swift */; };
 		1FBEC45F1DEAB82F00A9EA1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBEC45E1DEAB82F00A9EA1F /* AppDelegate.swift */; };
-		1FBEC4611DEAB82F00A9EA1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBEC4601DEAB82F00A9EA1F /* ViewController.swift */; };
 		1FBEC4661DEAB82F00A9EA1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FBEC4651DEAB82F00A9EA1F /* Assets.xcassets */; };
 		1FBEC4691DEAB82F00A9EA1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBEC4671DEAB82F00A9EA1F /* LaunchScreen.storyboard */; };
 		1FBEC4711DEAB86800A9EA1F /* FractalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBEC4701DEAB86800A9EA1F /* FractalView.swift */; };
@@ -19,9 +19,9 @@
 /* Begin PBXFileReference section */
 		1F40C3CA1DF2BD1E00E0F59F /* FractalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FractalController.swift; sourceTree = "<group>"; };
 		1F40C3CB1DF2BD1E00E0F59F /* FractalController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FractalController.xib; sourceTree = "<group>"; };
+		1F51E7A61DF7E5D900F1EFA3 /* FractalFriendCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FractalFriendCoordinator.swift; sourceTree = "<group>"; };
 		1FBEC45B1DEAB82F00A9EA1F /* FractalFriend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FractalFriend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FBEC45E1DEAB82F00A9EA1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1FBEC4601DEAB82F00A9EA1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1FBEC4651DEAB82F00A9EA1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FBEC4681DEAB82F00A9EA1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1FBEC46A1DEAB82F00A9EA1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,13 +59,13 @@
 			isa = PBXGroup;
 			children = (
 				1FBEC45E1DEAB82F00A9EA1F /* AppDelegate.swift */,
-				1FBEC4601DEAB82F00A9EA1F /* ViewController.swift */,
 				1FBEC4651DEAB82F00A9EA1F /* Assets.xcassets */,
 				1FBEC4671DEAB82F00A9EA1F /* LaunchScreen.storyboard */,
 				1FBEC46A1DEAB82F00A9EA1F /* Info.plist */,
 				1FBEC4701DEAB86800A9EA1F /* FractalView.swift */,
 				1F40C3CB1DF2BD1E00E0F59F /* FractalController.xib */,
 				1F40C3CA1DF2BD1E00E0F59F /* FractalController.swift */,
+				1F51E7A61DF7E5D900F1EFA3 /* FractalFriendCoordinator.swift */,
 			);
 			path = FractalFriend;
 			sourceTree = "<group>";
@@ -97,12 +97,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Freddy Hernandez";
 				TargetAttributes = {
 					1FBEC45A1DEAB82F00A9EA1F = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 9298243JKU;
+						DevelopmentTeam = SB7W59A77T;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -144,9 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FBEC4711DEAB86800A9EA1F /* FractalView.swift in Sources */,
-				1FBEC4611DEAB82F00A9EA1F /* ViewController.swift in Sources */,
 				1FBEC45F1DEAB82F00A9EA1F /* AppDelegate.swift in Sources */,
 				1F40C3CC1DF2BD1E00E0F59F /* FractalController.swift in Sources */,
+				1F51E7A71DF7E5D900F1EFA3 /* FractalFriendCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +182,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -232,6 +233,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -261,7 +263,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9298243JKU;
+				DEVELOPMENT_TEAM = SB7W59A77T;
 				INFOPLIST_FILE = FractalFriend/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fredhedz.FractalFriend;
@@ -274,7 +276,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9298243JKU;
+				DEVELOPMENT_TEAM = SB7W59A77T;
 				INFOPLIST_FILE = FractalFriend/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fredhedz.FractalFriend;
