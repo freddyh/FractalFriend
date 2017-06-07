@@ -7,12 +7,22 @@
 //
 
 import UIKit
+import Firebase
 
 class FractalFriendCoordinator {
 
     func start(in window:UIWindow) -> Void {
-        let fractalController =  FractalController(nibName:"FractalController", bundle: nil);
-        let nav = UINavigationController(rootViewController: fractalController)
+        let fractalController =  FractalController(nibName:String.init(describing: FractalController.classForCoder()), bundle: nil)
+        let loginController = LoginViewController(nibName: String.init(describing: LoginViewController.classForCoder()), bundle: nil)
+
+        var root = UIViewController()
+        if let u = Auth.auth().currentUser {
+            root = fractalController
+        } else {
+            root = loginController
+        }
+        
+        let nav = UINavigationController(rootViewController: root)
         nav.setNavigationBarHidden(false, animated: false)
         window.rootViewController = nav
         window.makeKeyAndVisible()

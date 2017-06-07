@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class FractalController: UIViewController {
 
@@ -25,6 +26,7 @@ class FractalController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(saveFractal))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareButtonTapped(sender:)))
         
         self.leftTreeSlider.minimumValue = Float(self.radianData.first!)
@@ -44,6 +46,11 @@ class FractalController: UIViewController {
     func saveFractalToLibrary() -> Void {
         let screenShot = self.fractalView.toImage()
         UIImageWriteToSavedPhotosAlbum(screenShot, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+    }
+    
+    func saveFractal() -> Void {
+        _ = self.fractalView.toImage()
+        
     }
 
     func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
@@ -123,5 +130,16 @@ class FractalController: UIViewController {
     @IBAction func symmetrySwitchValueChanged(_ sender: UISwitch) {
         
     }
+    
+    @IBAction func logoutButtonTapped(_ sender: UIButton) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+        
+    }
+    
     
 }
