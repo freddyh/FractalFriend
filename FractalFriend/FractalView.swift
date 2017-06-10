@@ -16,8 +16,6 @@ class FractalView: UIView {
     let radianData = Array(stride(from: -2*Double.pi, to: 2*Double.pi, by: Double.pi/120))
     let branchData = Array(stride(from: 2, to: 18, by: 1))
     
-    var isDrawing: Bool = false;
-    
     var treeDepth: Int = 1 {
         didSet {
             setNeedsDisplay()

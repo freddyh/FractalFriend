@@ -9,16 +9,33 @@
 import UIKit
 import Firebase
 
+class AppCoordinator {
+    let navigationController: UINavigationController
+    
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let appCoordinator:FractalFriendCoordinator = FractalFriendCoordinator()
+    var coordinator: AppCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         FirebaseApp.configure()
-        self.window = UIWindow.init(frame: UIScreen.main.bounds);
-        appCoordinator.start(in: self.window!)
+        
+        window = UIWindow.init(frame: UIScreen.main.bounds);
+        
+        let nav = UINavigationController()
+        window?.rootViewController = nav
+        coordinator = AppCoordinator(navigationController: nav)
+        let vc = FractalController(nibName:String.init(describing: FractalController.classForCoder()), bundle: nil)
+        nav.viewControllers = [vc]
+        
+        window?.makeKeyAndVisible()
         return true
     }
 
