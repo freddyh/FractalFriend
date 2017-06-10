@@ -30,10 +30,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow.init(frame: UIScreen.main.bounds);
         
         let nav = UINavigationController()
+        nav.setNavigationBarHidden(true, animated: false)
+        
+        let tabs = UITabBarController()
+        
         window?.rootViewController = nav
         coordinator = AppCoordinator(navigationController: nav)
+        
         let vc = FractalController(nibName:String.init(describing: FractalController.classForCoder()), bundle: nil)
-        nav.viewControllers = [vc]
+        vc.tabBarItem = UITabBarItem(title: "Fractal", image: UIImage.init(), tag: 0)
+        let fnav = UINavigationController(rootViewController: vc)
+        let vc1 = LoginViewController(nibName: String.init(describing: LoginViewController.classForCoder()), bundle: nil)
+        vc1.tabBarItem = UITabBarItem(title: "Settings", image: UIImage.init(), tag: 0)
+        let lnav = UINavigationController(rootViewController: vc1)
+        
+        
+        tabs.viewControllers = [fnav, lnav]
+        nav.viewControllers = [tabs]
         
         window?.makeKeyAndVisible()
         return true

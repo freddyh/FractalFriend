@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,13 +31,13 @@
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Symmetry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeO-GP-viR" userLabel="Enforce Symmetry Label">
-                    <rect key="frame" x="249.5" y="322" width="60.5" height="14.5"/>
+                    <rect key="frame" x="249.5" y="282" width="60.5" height="14.5"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                     <color key="textColor" red="1" green="0.40000000000000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2fq-vr-gjk" userLabel="Symmetry Switch">
-                    <rect key="frame" x="261" y="341.5" width="51" height="31"/>
+                    <rect key="frame" x="261" y="301.5" width="51" height="31"/>
                     <color key="tintColor" red="1" green="0.40000000000000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="onTintColor" red="1" green="0.40000000000000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
@@ -46,7 +45,7 @@
                     </connections>
                 </switch>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rDw-tl-ZGy" userLabel="Labels Stack View">
-                    <rect key="frame" x="10" y="402.5" width="300" height="13.5"/>
+                    <rect key="frame" x="10" y="362.5" width="300" height="13.5"/>
                     <subviews>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Left Tree Angle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nmc-dT-NaQ" userLabel="Left Tree Angle Label">
                             <rect key="frame" x="0.0" y="0.0" width="86.5" height="13.5"/>
@@ -84,7 +83,7 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="firstBaseline" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fZQ-Yt-CwN" userLabel="Values Stack View">
-                    <rect key="frame" x="10" y="418" width="300" height="17"/>
+                    <rect key="frame" x="10" y="378" width="300" height="17"/>
                     <subviews>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="radians" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ico-7O-3eO" userLabel="Left Tree Value">
                             <rect key="frame" x="0.0" y="0.0" width="96.5" height="17"/>
@@ -122,7 +121,7 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="akC-cO-QgB" userLabel="Slider Stack View">
-                    <rect key="frame" x="10" y="440" width="300" height="30"/>
+                    <rect key="frame" x="10" y="400" width="300" height="30"/>
                     <subviews>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="80" translatesAutoresizingMaskIntoConstraints="NO" id="tI1-yf-nNf">
                             <rect key="frame" x="-2" y="0.0" width="90.5" height="31"/>
@@ -151,7 +150,7 @@
                     </constraints>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBB-OQ-u4J">
-                    <rect key="frame" x="10" y="372.5" width="55" height="30"/>
+                    <rect key="frame" x="10" y="332.5" width="55" height="30"/>
                     <state key="normal" title="Log Out"/>
                     <connections>
                         <action selector="logoutButtonTapped:" destination="-1" eventType="touchUpInside" id="OGJ-Ri-faw"/>
@@ -165,7 +164,7 @@
                 <constraint firstItem="fZQ-Yt-CwN" firstAttribute="top" secondItem="rDw-tl-ZGy" secondAttribute="bottom" constant="2" id="41V-dn-OUx"/>
                 <constraint firstItem="emb-sj-E5H" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8ot-SQ-0zZ"/>
                 <constraint firstItem="rDw-tl-ZGy" firstAttribute="top" secondItem="2fq-vr-gjk" secondAttribute="bottom" constant="30" id="F1S-Un-792"/>
-                <constraint firstAttribute="bottom" secondItem="akC-cO-QgB" secondAttribute="bottom" constant="10" id="Hpb-x2-NcA"/>
+                <constraint firstAttribute="bottom" secondItem="akC-cO-QgB" secondAttribute="bottom" constant="50" id="Hpb-x2-NcA"/>
                 <constraint firstItem="uBB-OQ-u4J" firstAttribute="leading" secondItem="rDw-tl-ZGy" secondAttribute="leading" id="KAP-NL-9C7"/>
                 <constraint firstItem="fZQ-Yt-CwN" firstAttribute="centerX" secondItem="akC-cO-QgB" secondAttribute="centerX" id="MCu-aT-QYn"/>
                 <constraint firstItem="rDw-tl-ZGy" firstAttribute="width" secondItem="fZQ-Yt-CwN" secondAttribute="width" id="Mum-sd-kqf"/>
@@ -183,6 +182,7 @@
                 <constraint firstItem="akC-cO-QgB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="wTD-bP-6ap"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
+            <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
             <point key="canvasLocation" x="34" y="53"/>
         </view>
     </objects>
