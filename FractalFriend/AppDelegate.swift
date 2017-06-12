@@ -38,12 +38,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         coordinator = AppCoordinator(navigationController: nav)
         
         let vc = FractalController(nibName:String.init(describing: FractalController.classForCoder()), bundle: nil)
-        vc.tabBarItem = UITabBarItem(title: "Fractal", image: UIImage.init(), tag: 0)
+        vc.tabBarItem = UITabBarItem(title: "Fractal", image: UIImage(named: "home"), tag: 0)
         let fnav = UINavigationController(rootViewController: vc)
         let vc1 = LoginViewController(nibName: String.init(describing: LoginViewController.classForCoder()), bundle: nil)
-        vc1.tabBarItem = UITabBarItem(title: "Settings", image: UIImage.init(), tag: 0)
+        vc1.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(named: "settings"), tag: 0)
         let lnav = UINavigationController(rootViewController: vc1)
-        
         
         tabs.viewControllers = [fnav, lnav]
         nav.viewControllers = [tabs]
