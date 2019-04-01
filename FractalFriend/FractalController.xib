@@ -28,17 +28,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="emb-sj-E5H" customClass="FractalView" customModule="FractalFriend" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="351.5"/>
+                    <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Force Symmetry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeO-GP-viR" userLabel="Enforce Symmetry Label">
-                    <rect key="frame" x="213" y="312" width="97" height="14.5"/>
+                    <rect key="frame" x="154" y="360" width="97" height="14.5"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                     <color key="textColor" red="1" green="0.40000000000000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2fq-vr-gjk" userLabel="Symmetry Switch">
-                    <rect key="frame" x="261" y="331.5" width="51" height="31"/>
+                    <rect key="frame" x="261" y="351.5" width="51" height="31"/>
                     <color key="tintColor" red="1" green="0.40000000000000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="onTintColor" red="1" green="0.40000000000000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
@@ -151,26 +151,25 @@
                     </constraints>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <gestureRecognizers/>
             <constraints>
-                <constraint firstItem="emb-sj-E5H" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="26Z-n8-zZj"/>
                 <constraint firstItem="fZQ-Yt-CwN" firstAttribute="top" secondItem="rDw-tl-ZGy" secondAttribute="bottom" constant="2" id="41V-dn-OUx"/>
+                <constraint firstItem="2fq-vr-gjk" firstAttribute="top" secondItem="emb-sj-E5H" secondAttribute="bottom" id="78B-df-wbj"/>
                 <constraint firstItem="emb-sj-E5H" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8ot-SQ-0zZ"/>
-                <constraint firstItem="rDw-tl-ZGy" firstAttribute="top" secondItem="2fq-vr-gjk" secondAttribute="bottom" constant="30" id="F1S-Un-792"/>
+                <constraint firstItem="rDw-tl-ZGy" firstAttribute="top" secondItem="2fq-vr-gjk" secondAttribute="bottom" constant="10" id="F1S-Un-792"/>
                 <constraint firstAttribute="bottom" secondItem="akC-cO-QgB" secondAttribute="bottom" constant="20" id="Hpb-x2-NcA"/>
                 <constraint firstItem="fZQ-Yt-CwN" firstAttribute="centerX" secondItem="akC-cO-QgB" secondAttribute="centerX" id="MCu-aT-QYn"/>
                 <constraint firstItem="rDw-tl-ZGy" firstAttribute="width" secondItem="fZQ-Yt-CwN" secondAttribute="width" id="Mum-sd-kqf"/>
-                <constraint firstItem="BeO-GP-viR" firstAttribute="trailing" secondItem="2fq-vr-gjk" secondAttribute="trailing" id="Ste-X2-tie"/>
-                <constraint firstItem="emb-sj-E5H" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="cpI-83-vvS"/>
+                <constraint firstItem="2fq-vr-gjk" firstAttribute="centerY" secondItem="BeO-GP-viR" secondAttribute="centerY" id="R84-0k-8f3"/>
+                <constraint firstItem="emb-sj-E5H" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Xpx-oY-HJe"/>
                 <constraint firstAttribute="trailing" secondItem="2fq-vr-gjk" secondAttribute="trailing" constant="10" id="eUK-B3-vBc"/>
                 <constraint firstItem="akC-cO-QgB" firstAttribute="top" secondItem="fZQ-Yt-CwN" secondAttribute="bottom" constant="5" id="m8k-cm-HwA"/>
                 <constraint firstItem="emb-sj-E5H" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="mGs-0w-H8l"/>
                 <constraint firstItem="fZQ-Yt-CwN" firstAttribute="width" secondItem="akC-cO-QgB" secondAttribute="width" id="mfU-j1-ZAt"/>
                 <constraint firstAttribute="trailing" secondItem="akC-cO-QgB" secondAttribute="trailing" constant="10" id="nKh-YA-zDX"/>
-                <constraint firstItem="2fq-vr-gjk" firstAttribute="top" secondItem="BeO-GP-viR" secondAttribute="bottom" constant="5" id="q7e-6e-Nsy"/>
                 <constraint firstItem="rDw-tl-ZGy" firstAttribute="centerX" secondItem="fZQ-Yt-CwN" secondAttribute="centerX" id="txK-B7-Dda"/>
-                <constraint firstAttribute="trailing" secondItem="BeO-GP-viR" secondAttribute="trailing" constant="10" id="uje-be-044"/>
+                <constraint firstItem="2fq-vr-gjk" firstAttribute="leading" secondItem="BeO-GP-viR" secondAttribute="trailing" constant="10" id="utJ-eq-eJy"/>
                 <constraint firstItem="akC-cO-QgB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="wTD-bP-6ap"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

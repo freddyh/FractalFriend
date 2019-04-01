@@ -41,7 +41,7 @@ class FractalView: UIView {
         self.initialBranchLength = self.bounds.height / 20.0
         
         // origin of the base branch
-        let treeOrigin = CGPoint.init(x: self.bounds.width/2, y: self.bounds.height*0.45)
+        let treeOrigin = CGPoint.init(x: self.bounds.width/2, y: self.bounds.height*0.5)
         self.drawBranch(origin: treeOrigin, angle: Double.pi/2, depth: maxDepth > treeDepth ? treeDepth : maxDepth)
     }
     
