@@ -42,7 +42,7 @@ class FractalView: UIView {
         
         // origin of the base branch
         let treeOrigin = CGPoint.init(x: self.bounds.width/2, y: self.bounds.height*0.5)
-        self.drawBranch(origin: treeOrigin, angle: Double.pi/2, depth: maxDepth > treeDepth ? treeDepth : maxDepth)
+        self.drawTree(origin: treeOrigin, angle: Double.pi/2, depth: maxDepth > treeDepth ? treeDepth : maxDepth)
     }
     
     public func toImage() -> UIImage {
@@ -59,7 +59,7 @@ class FractalView: UIView {
         return image!
     }
     
-    func drawBranch(origin:CGPoint, angle:Double, depth:Int) -> Void {
+    func drawTree(origin:CGPoint, angle:Double, depth:Int) -> Void {
         
         // calculate the endpoint of this branch
         // calculate the length of the branch based on the current depth and max depth
@@ -74,15 +74,15 @@ class FractalView: UIView {
         
         if depth > 0 {
             // draw a line to the endpoint
-            drawBranchSegment(lineWidth: 1.0, fromPoint: origin, toPoint:endpoint)
+            drawLine(lineWidth: 1.0, fromPoint: origin, toPoint:endpoint)
             
             // draw the children branches
-            drawBranch(origin: endpoint, angle: angle + leftTreeAngle, depth: depth - 1)
-            drawBranch(origin: endpoint, angle: angle - rightTreeAngle, depth: depth - 1)
+            drawTree(origin: endpoint, angle: angle + leftTreeAngle, depth: depth - 1)
+            drawTree(origin: endpoint, angle: angle - rightTreeAngle, depth: depth - 1)
         }
     }
     
-    func drawBranchSegment(lineWidth:CGFloat, fromPoint:CGPoint, toPoint:CGPoint) -> Void {
+    func drawLine(lineWidth:CGFloat, fromPoint:CGPoint, toPoint:CGPoint) -> Void {
         let path = UIBezierPath()
         
         let distance = hypotf(Float(fromPoint.x - toPoint.x), Float(fromPoint.y - toPoint.y));
