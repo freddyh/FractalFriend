@@ -60,7 +60,7 @@ class FractalController: UIViewController {
         })
     }
     
-    func shareButtonTapped(sender:UIBarButtonItem) -> Void {
+    @objc func shareButtonTapped(sender:UIBarButtonItem) -> Void {
         let ac = UIActivityViewController(activityItems: [self.fractalView.toImage()], applicationActivities: nil)
         self.navigationController?.present(ac, animated: true, completion: nil)
     }
@@ -70,9 +70,9 @@ class FractalController: UIViewController {
         UIImageWriteToSavedPhotosAlbum(screenShot, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     
-    func saveFractal() -> Void {
+    @objc func saveFractal() -> Void {
         let fractalImage = self.fractalView.toImage()
-        let fractalImageData = UIImageJPEGRepresentation(fractalImage, 0.8)
+        let fractalImageData = fractalImage.jpegData(compressionQuality: 1.0)
         let imageRef = Storage.storage().reference().child("images/" + "\(NSDate().timeIntervalSince1970)")
         
         _ = imageRef.putData(fractalImageData!, metadata: nil, completion: {
@@ -99,7 +99,7 @@ class FractalController: UIViewController {
     }
     
 
-    func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
         if let error = error {
             let ac = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default))
