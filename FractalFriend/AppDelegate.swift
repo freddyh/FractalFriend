@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 class AppCoordinator {
     let navigationController: UINavigationController
@@ -25,8 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        FirebaseApp.configure()
-        
         window = UIWindow.init(frame: UIScreen.main.bounds);
         
         let nav = UINavigationController()
@@ -40,11 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let vc = FractalController(nibName:String.init(describing: FractalController.classForCoder()), bundle: nil)
         vc.tabBarItem = UITabBarItem(title: "Fractal", image: UIImage(named: "home"), tag: 0)
         let fnav = UINavigationController(rootViewController: vc)
-        let vc1 = LoginViewController(nibName: String.init(describing: LoginViewController.classForCoder()), bundle: nil)
-        vc1.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(named: "settings"), tag: 0)
-        let lnav = UINavigationController(rootViewController: vc1)
         
-        tabs.viewControllers = [fnav, lnav]
+        tabs.viewControllers = [fnav]
         nav.viewControllers = [tabs]
         
         window?.makeKeyAndVisible()

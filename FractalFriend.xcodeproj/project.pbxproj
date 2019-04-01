@@ -10,14 +10,10 @@
 		1F40C3CC1DF2BD1E00E0F59F /* FractalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F40C3CA1DF2BD1E00E0F59F /* FractalController.swift */; };
 		1F40C3CD1DF2BD1E00E0F59F /* FractalController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F40C3CB1DF2BD1E00E0F59F /* FractalController.xib */; };
 		1F51E7A71DF7E5D900F1EFA3 /* FractalFriendCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F51E7A61DF7E5D900F1EFA3 /* FractalFriendCoordinator.swift */; };
-		1F7A365A1EE7D4FF0035F0A4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F7A36591EE7D4FF0035F0A4 /* GoogleService-Info.plist */; };
 		1FBEC45F1DEAB82F00A9EA1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBEC45E1DEAB82F00A9EA1F /* AppDelegate.swift */; };
 		1FBEC4661DEAB82F00A9EA1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FBEC4651DEAB82F00A9EA1F /* Assets.xcassets */; };
 		1FBEC4691DEAB82F00A9EA1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBEC4671DEAB82F00A9EA1F /* LaunchScreen.storyboard */; };
 		1FBEC4711DEAB86800A9EA1F /* FractalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBEC4701DEAB86800A9EA1F /* FractalView.swift */; };
-		1FDA77441EE7D7B500558E90 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDA77421EE7D7B500558E90 /* LoginViewController.swift */; };
-		1FDA77451EE7D7B500558E90 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FDA77431EE7D7B500558E90 /* LoginViewController.xib */; };
-		1FDA77471EE7E29200558E90 /* FractalFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDA77461EE7E29200558E90 /* FractalFriend.swift */; };
 		B381690B05ABD30AB0F47F55 /* Pods_FractalFriend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4B10F53B0FFFBBEF686981C /* Pods_FractalFriend.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,16 +22,12 @@
 		1F40C3CA1DF2BD1E00E0F59F /* FractalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FractalController.swift; sourceTree = "<group>"; };
 		1F40C3CB1DF2BD1E00E0F59F /* FractalController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FractalController.xib; sourceTree = "<group>"; };
 		1F51E7A61DF7E5D900F1EFA3 /* FractalFriendCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FractalFriendCoordinator.swift; sourceTree = "<group>"; };
-		1F7A36591EE7D4FF0035F0A4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1FBEC45B1DEAB82F00A9EA1F /* FractalFriend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FractalFriend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FBEC45E1DEAB82F00A9EA1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FBEC4651DEAB82F00A9EA1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FBEC4681DEAB82F00A9EA1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1FBEC46A1DEAB82F00A9EA1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FBEC4701DEAB86800A9EA1F /* FractalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FractalView.swift; sourceTree = "<group>"; };
-		1FDA77421EE7D7B500558E90 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		1FDA77431EE7D7B500558E90 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		1FDA77461EE7E29200558E90 /* FractalFriend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FractalFriend.swift; sourceTree = "<group>"; };
 		278F904BE5C17440AD8DA15E /* Pods-FractalFriend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FractalFriend.release.xcconfig"; path = "Pods/Target Support Files/Pods-FractalFriend/Pods-FractalFriend.release.xcconfig"; sourceTree = "<group>"; };
 		F4B10F53B0FFFBBEF686981C /* Pods_FractalFriend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FractalFriend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -77,14 +69,10 @@
 				1FBEC4651DEAB82F00A9EA1F /* Assets.xcassets */,
 				1F40C3CA1DF2BD1E00E0F59F /* FractalController.swift */,
 				1F40C3CB1DF2BD1E00E0F59F /* FractalController.xib */,
-				1FDA77461EE7E29200558E90 /* FractalFriend.swift */,
 				1F51E7A61DF7E5D900F1EFA3 /* FractalFriendCoordinator.swift */,
 				1FBEC4701DEAB86800A9EA1F /* FractalView.swift */,
-				1F7A36591EE7D4FF0035F0A4 /* GoogleService-Info.plist */,
 				1FBEC46A1DEAB82F00A9EA1F /* Info.plist */,
 				1FBEC4671DEAB82F00A9EA1F /* LaunchScreen.storyboard */,
-				1FDA77421EE7D7B500558E90 /* LoginViewController.swift */,
-				1FDA77431EE7D7B500558E90 /* LoginViewController.xib */,
 			);
 			path = FractalFriend;
 			sourceTree = "<group>";
@@ -117,7 +105,6 @@
 				1FBEC4571DEAB82F00A9EA1F /* Sources */,
 				1FBEC4581DEAB82F00A9EA1F /* Frameworks */,
 				1FBEC4591DEAB82F00A9EA1F /* Resources */,
-				C1EAF73E0173683F6C2986DA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -170,9 +157,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FDA77451EE7D7B500558E90 /* LoginViewController.xib in Resources */,
 				1FBEC4691DEAB82F00A9EA1F /* LaunchScreen.storyboard in Resources */,
-				1F7A365A1EE7D4FF0035F0A4 /* GoogleService-Info.plist in Resources */,
 				1FBEC4661DEAB82F00A9EA1F /* Assets.xcassets in Resources */,
 				1F40C3CD1DF2BD1E00E0F59F /* FractalController.xib in Resources */,
 			);
@@ -199,26 +184,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C1EAF73E0173683F6C2986DA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FractalFriend/Pods-FractalFriend-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FractalFriend/Pods-FractalFriend-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -227,10 +192,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FBEC4711DEAB86800A9EA1F /* FractalView.swift in Sources */,
-				1FDA77471EE7E29200558E90 /* FractalFriend.swift in Sources */,
 				1FBEC45F1DEAB82F00A9EA1F /* AppDelegate.swift in Sources */,
 				1F40C3CC1DF2BD1E00E0F59F /* FractalController.swift in Sources */,
-				1FDA77441EE7D7B500558E90 /* LoginViewController.swift in Sources */,
 				1F51E7A71DF7E5D900F1EFA3 /* FractalFriendCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

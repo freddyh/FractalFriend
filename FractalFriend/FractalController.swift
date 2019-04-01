@@ -7,9 +7,6 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseDatabase
-import FirebaseStorage
 
 class FractalController: UIViewController {
 
@@ -25,15 +22,10 @@ class FractalController: UIViewController {
     let radianData = Array(stride(from: -2*Double.pi, to: 2*Double.pi, by: Double.pi/120))
     let branchData = Array(stride(from: 2, to: 18, by: 1))
     
-    var dbRef: DatabaseReference!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dbRef = Database.database().reference().child("fractalFriends")
-        loadDb()
-        
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(saveFractal))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(saveFractalToLibrary))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareButtonTapped(sender:)))
         
         self.leftTreeSlider.minimumValue = Float(self.radianData.first!)
@@ -45,59 +37,15 @@ class FractalController: UIViewController {
         generateNewFractal()
     }
     
-    func loadDb() -> Void {
-        dbRef.observe(.value, with: {
-            (snapshot) in
-            var friends = [FractalFriend]()
-            
-            for ff in snapshot.children {
-                let newff = FractalFriend(snapshot: ff as! DataSnapshot)
-                friends.append(newff)
-            }
-            
-            print("friends: \(friends)")
-            
-        })
-    }
-    
     @objc func shareButtonTapped(sender:UIBarButtonItem) -> Void {
         let ac = UIActivityViewController(activityItems: [self.fractalView.toImage()], applicationActivities: nil)
         self.navigationController?.present(ac, animated: true, completion: nil)
     }
     
-    func saveFractalToLibrary() -> Void {
+    @objc func saveFractalToLibrary() -> Void {
         let screenShot = self.fractalView.toImage()
         UIImageWriteToSavedPhotosAlbum(screenShot, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
-    
-    @objc func saveFractal() -> Void {
-        let fractalImage = self.fractalView.toImage()
-        let fractalImageData = fractalImage.jpegData(compressionQuality: 1.0)
-        let imageRef = Storage.storage().reference().child("images/" + "\(NSDate().timeIntervalSince1970)")
-        
-        _ = imageRef.putData(fractalImageData!, metadata: nil, completion: {
-            (metaData, error) in
-            if let meta = metaData {
-                print("download URL: \(meta.downloadURL()!)")
-                
-                let key = self.dbRef.childByAutoId().key
-                let image = ["url":meta.downloadURL()!.absoluteString]
-                let childUpdates = [key: image]
-                self.dbRef.updateChildValues(childUpdates, withCompletionBlock: {
-                    (error, databseReference) in
-                    if error != nil {
-                        print("failure: \(error.debugDescription)")
-                    } else {
-                        print("success")
-                    }
-                })
-            } else {
-                print("something went wrong")
-            }
-        })
-        
-    }
-    
 
     @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
         if let error = error {
@@ -176,14 +124,5 @@ class FractalController: UIViewController {
     }
     
     @IBAction func logoutButtonTapped(_ sender: UIButton) {
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-        }
-        
     }
-    
-    
 }

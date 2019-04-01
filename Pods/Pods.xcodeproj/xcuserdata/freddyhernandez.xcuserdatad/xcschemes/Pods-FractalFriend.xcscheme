@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C5F8522366A8A37C39A86717224FCC31"
+               BlueprintIdentifier = "34EA9A1991FB96977EBFCF84C43F74EA"
                BuildableName = "Pods_FractalFriend.framework"
                BlueprintName = "Pods-FractalFriend"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C5F8522366A8A37C39A86717224FCC31"
+            BlueprintIdentifier = "34EA9A1991FB96977EBFCF84C43F74EA"
             BuildableName = "Pods_FractalFriend.framework"
             BlueprintName = "Pods-FractalFriend"
             ReferencedContainer = "container:Pods.xcodeproj">
