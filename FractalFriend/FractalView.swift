@@ -88,7 +88,6 @@ class FractalView: UIView {
         let distance = hypotf(Float(startPoint.x - endPoint.x), Float(startPoint.y - endPoint.y));
         let s = distance/Float(self.initialBranchLength)
         let branchColor = UIColor(hue: 1.0, saturation: 1.0, brightness: CGFloat(1.0 - s), alpha: 1.0)
-        
         branchColor.set()
         path.lineWidth = width
         path.move(to: startPoint)

@@ -21,11 +21,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var coordinator: AppCoordinator?
+    
+    func applyTheme() {
+        let buttonAppearance = UIButton.appearance()
+//        buttonAppearance.tintColor =
+        buttonAppearance.titleLabel?.textColor = UIColor.primaryColor
+        
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow.init(frame: UIScreen.main.bounds)
         let fractalController = FractalController(nibName:String.init(describing: FractalController.classForCoder()), bundle: nil)
         let navigationController = UINavigationController.init(rootViewController: fractalController)
+        navigationController.navigationBar.tintColor = UIColor.primaryColor
         coordinator = AppCoordinator(navigationController: navigationController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

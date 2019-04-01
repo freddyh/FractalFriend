@@ -14,6 +14,7 @@
 		1FBEC4661DEAB82F00A9EA1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FBEC4651DEAB82F00A9EA1F /* Assets.xcassets */; };
 		1FBEC4691DEAB82F00A9EA1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBEC4671DEAB82F00A9EA1F /* LaunchScreen.storyboard */; };
 		1FBEC4711DEAB86800A9EA1F /* FractalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBEC4701DEAB86800A9EA1F /* FractalView.swift */; };
+		1FE7ED642252BF6D00F7FA70 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7ED632252BF6D00F7FA70 /* UIColor+Extensions.swift */; };
 		B381690B05ABD30AB0F47F55 /* Pods_FractalFriend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4B10F53B0FFFBBEF686981C /* Pods_FractalFriend.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		1FBEC4681DEAB82F00A9EA1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1FBEC46A1DEAB82F00A9EA1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FBEC4701DEAB86800A9EA1F /* FractalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FractalView.swift; sourceTree = "<group>"; };
+		1FE7ED632252BF6D00F7FA70 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		278F904BE5C17440AD8DA15E /* Pods-FractalFriend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FractalFriend.release.xcconfig"; path = "Pods/Target Support Files/Pods-FractalFriend/Pods-FractalFriend.release.xcconfig"; sourceTree = "<group>"; };
 		F4B10F53B0FFFBBEF686981C /* Pods_FractalFriend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FractalFriend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -73,6 +75,7 @@
 				1FBEC4701DEAB86800A9EA1F /* FractalView.swift */,
 				1FBEC46A1DEAB82F00A9EA1F /* Info.plist */,
 				1FBEC4671DEAB82F00A9EA1F /* LaunchScreen.storyboard */,
+				1FE7ED632252BF6D00F7FA70 /* UIColor+Extensions.swift */,
 			);
 			path = FractalFriend;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FBEC4711DEAB86800A9EA1F /* FractalView.swift in Sources */,
+				1FE7ED642252BF6D00F7FA70 /* UIColor+Extensions.swift in Sources */,
 				1FBEC45F1DEAB82F00A9EA1F /* AppDelegate.swift in Sources */,
 				1F40C3CC1DF2BD1E00E0F59F /* FractalController.swift in Sources */,
 				1F51E7A71DF7E5D900F1EFA3 /* FractalFriendCoordinator.swift in Sources */,

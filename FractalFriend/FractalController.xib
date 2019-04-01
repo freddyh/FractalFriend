@@ -34,7 +34,7 @@
                 </view>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2fq-vr-gjk" userLabel="Symmetry Switch">
                     <rect key="frame" x="261" y="400.5" width="51" height="31"/>
-                    <color key="tintColor" red="1" green="0.40000000000000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <color key="onTintColor" red="1" green="0.40000000000000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <action selector="symmetrySwitchValueChanged:" destination="-1" eventType="valueChanged" id="g0u-5s-mU3"/>
@@ -44,7 +44,7 @@
                     <rect key="frame" x="160" y="402.5" width="97" height="27"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                     <state key="normal" title="Force Symmetry">
-                        <color key="titleColor" red="0.99215686270000003" green="0.49019607840000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="forceSymmetryButtonTapped:" destination="-1" eventType="touchUpInside" id="rKO-EP-ax1"/>
@@ -54,7 +54,7 @@
                     <rect key="frame" x="10" y="402" width="93" height="27"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                     <state key="normal" title="Random Fractal">
-                        <color key="titleColor" red="0.99215686270000003" green="0.49019607840000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="randomFractalButtonTapped:" destination="-1" eventType="touchUpInside" id="UK4-Hp-KA0"/>
@@ -141,21 +141,21 @@
                     <subviews>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="80" translatesAutoresizingMaskIntoConstraints="NO" id="tI1-yf-nNf">
                             <rect key="frame" x="-2" y="0.0" width="86.5" height="31"/>
-                            <color key="tintColor" red="1" green="0.40000000000000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="leftTreeSliderChanged:" destination="-1" eventType="valueChanged" id="bZq-pS-q6d"/>
                             </connections>
                         </slider>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="V4z-PX-PyX">
                             <rect key="frame" x="100.5" y="0.0" width="87" height="31"/>
-                            <color key="tintColor" red="1" green="0.40000000000000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="rightTreeSliderChanged:" destination="-1" eventType="valueChanged" id="8bm-qM-ujh"/>
                             </connections>
                         </slider>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="2" maxValue="13" translatesAutoresizingMaskIntoConstraints="NO" id="Xmu-C8-axN" userLabel="Depth Slider">
                             <rect key="frame" x="203.5" y="0.0" width="86.5" height="31"/>
-                            <color key="tintColor" red="1" green="0.40000000000000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="depthSliderChanged:" destination="-1" eventType="valueChanged" id="mwQ-9r-yst"/>
                             </connections>
