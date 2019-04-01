@@ -150,13 +150,6 @@
                         <constraint firstAttribute="height" constant="30" id="c6N-Hc-thc"/>
                     </constraints>
                 </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBB-OQ-u4J">
-                    <rect key="frame" x="10" y="332.5" width="55" height="30"/>
-                    <state key="normal" title="Log Out"/>
-                    <connections>
-                        <action selector="logoutButtonTapped:" destination="-1" eventType="touchUpInside" id="OGJ-Ri-faw"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <gestureRecognizers/>
@@ -166,11 +159,9 @@
                 <constraint firstItem="emb-sj-E5H" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8ot-SQ-0zZ"/>
                 <constraint firstItem="rDw-tl-ZGy" firstAttribute="top" secondItem="2fq-vr-gjk" secondAttribute="bottom" constant="30" id="F1S-Un-792"/>
                 <constraint firstAttribute="bottom" secondItem="akC-cO-QgB" secondAttribute="bottom" constant="50" id="Hpb-x2-NcA"/>
-                <constraint firstItem="uBB-OQ-u4J" firstAttribute="leading" secondItem="rDw-tl-ZGy" secondAttribute="leading" id="KAP-NL-9C7"/>
                 <constraint firstItem="fZQ-Yt-CwN" firstAttribute="centerX" secondItem="akC-cO-QgB" secondAttribute="centerX" id="MCu-aT-QYn"/>
                 <constraint firstItem="rDw-tl-ZGy" firstAttribute="width" secondItem="fZQ-Yt-CwN" secondAttribute="width" id="Mum-sd-kqf"/>
                 <constraint firstItem="BeO-GP-viR" firstAttribute="trailing" secondItem="2fq-vr-gjk" secondAttribute="trailing" id="Ste-X2-tie"/>
-                <constraint firstItem="rDw-tl-ZGy" firstAttribute="top" secondItem="uBB-OQ-u4J" secondAttribute="bottom" id="bGh-3m-lR5"/>
                 <constraint firstItem="emb-sj-E5H" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="cpI-83-vvS"/>
                 <constraint firstAttribute="trailing" secondItem="2fq-vr-gjk" secondAttribute="trailing" constant="10" id="eUK-B3-vBc"/>
                 <constraint firstItem="akC-cO-QgB" firstAttribute="top" secondItem="fZQ-Yt-CwN" secondAttribute="bottom" constant="5" id="m8k-cm-HwA"/>

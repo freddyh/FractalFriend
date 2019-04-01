@@ -122,7 +122,4 @@ class FractalController: UIViewController {
         self.leftTreeSlider.setValue(self.rightTreeSlider.value, animated: true)
         updateSliderLabels()
     }
-    
-    @IBAction func logoutButtonTapped(_ sender: UIButton) {
-    }
 }
