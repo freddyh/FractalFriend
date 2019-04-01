@@ -73,18 +73,18 @@
 		1FBEC45D1DEAB82F00A9EA1F /* FractalFriend */ = {
 			isa = PBXGroup;
 			children = (
-				1F7A36591EE7D4FF0035F0A4 /* GoogleService-Info.plist */,
 				1FBEC45E1DEAB82F00A9EA1F /* AppDelegate.swift */,
 				1FBEC4651DEAB82F00A9EA1F /* Assets.xcassets */,
-				1FBEC4671DEAB82F00A9EA1F /* LaunchScreen.storyboard */,
-				1FBEC46A1DEAB82F00A9EA1F /* Info.plist */,
-				1FBEC4701DEAB86800A9EA1F /* FractalView.swift */,
-				1F40C3CB1DF2BD1E00E0F59F /* FractalController.xib */,
 				1F40C3CA1DF2BD1E00E0F59F /* FractalController.swift */,
+				1F40C3CB1DF2BD1E00E0F59F /* FractalController.xib */,
+				1FDA77461EE7E29200558E90 /* FractalFriend.swift */,
 				1F51E7A61DF7E5D900F1EFA3 /* FractalFriendCoordinator.swift */,
+				1FBEC4701DEAB86800A9EA1F /* FractalView.swift */,
+				1F7A36591EE7D4FF0035F0A4 /* GoogleService-Info.plist */,
+				1FBEC46A1DEAB82F00A9EA1F /* Info.plist */,
+				1FBEC4671DEAB82F00A9EA1F /* LaunchScreen.storyboard */,
 				1FDA77421EE7D7B500558E90 /* LoginViewController.swift */,
 				1FDA77431EE7D7B500558E90 /* LoginViewController.xib */,
-				1FDA77461EE7E29200558E90 /* FractalFriend.swift */,
 			);
 			path = FractalFriend;
 			sourceTree = "<group>";
