@@ -28,18 +28,15 @@ class FractalController: UIViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(saveFractalToLibrary))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareButtonTapped(sender:)))
         
-        self.leftTreeSlider.minimumValue = Float(self.radianData.first!)
-        self.rightTreeSlider.minimumValue = Float(self.radianData.first!)
-        
-        self.leftTreeSlider.maximumValue = Float(self.radianData.last!)
-        self.rightTreeSlider.maximumValue = Float(self.radianData.last!)
-        
-        generateNewFractal()
+        self.generateNewFractal()
     }
     
     @objc func shareButtonTapped(sender:UIBarButtonItem) -> Void {
         let ac = UIActivityViewController(activityItems: [self.fractalView.toImage()], applicationActivities: nil)
-        self.navigationController?.present(ac, animated: true, completion: nil)
+        guard let navigationController = self.navigationController else {
+            return
+        }
+        navigationController.present(ac, animated: true, completion: nil)
     }
     
     @objc func saveFractalToLibrary() -> Void {
@@ -48,15 +45,15 @@ class FractalController: UIViewController {
     }
 
     @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
-        if let error = error {
-            let ac = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
+        guard error == nil else {
+            let ac = UIAlertController(title: "Save error", message: error!.localizedDescription, preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default))
             present(ac, animated: true)
-        } else {
-            let ac = UIAlertController(title: "Saved!", message: "The binary fractral tree has been saved to your photos.", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .default))
-            present(ac, animated: true)
+            return
         }
+        let ac = UIAlertController(title: "Saved!", message: "The binary fractral tree has been saved to your photos.", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
     }
     
     func randomizePickerValues() -> Void {
@@ -87,8 +84,8 @@ class FractalController: UIViewController {
     }
     
     func generateNewFractal() -> Void {
-        randomizePickerValues()
-        updateFractalView()
+        self.randomizePickerValues()
+        self.updateFractalView()
     }
     
     @IBAction func leftTreeSliderChanged(_ sender: UISlider) {
