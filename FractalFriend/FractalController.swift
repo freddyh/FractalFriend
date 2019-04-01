@@ -28,7 +28,30 @@ class FractalController: UIViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(saveFractalToLibrary))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareButtonTapped(sender:)))
         
+        self.setExtremeSliderValues()
         self.generateNewFractal()
+    }
+    
+    func setMinimumSliderValue(_ value: Float) {
+        self.leftTreeSlider.minimumValue = value
+        self.rightTreeSlider.minimumValue = value
+    }
+    
+    func setMaximumSliderValue(_ value: Float) {
+        self.rightTreeSlider.maximumValue = value
+        self.leftTreeSlider.maximumValue = value
+    }
+    
+    func setExtremeSliderValues() {
+        guard let minimum = self.radianData.first else {
+            return
+        }
+        self.setMinimumSliderValue(Float(minimum))
+        
+        guard let maximum = self.radianData.last else {
+            return
+        }
+        self.setMaximumSliderValue(Float(maximum))
     }
     
     @objc func shareButtonTapped(sender:UIBarButtonItem) -> Void {
