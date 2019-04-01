@@ -26,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow.init(frame: UIScreen.main.bounds)
         let fractalController = FractalController(nibName:String.init(describing: FractalController.classForCoder()), bundle: nil)
         let navigationController = UINavigationController.init(rootViewController: fractalController)
-        navigationController.setNavigationBarHidden(true, animated: false)
         coordinator = AppCoordinator(navigationController: navigationController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
