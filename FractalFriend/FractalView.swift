@@ -41,7 +41,7 @@ class FractalView: UIView {
         self.initialBranchLength = self.bounds.height / 20.0
         
         // origin of the base branch
-        let treeOrigin = CGPoint.init(x: self.bounds.width/2, y: self.bounds.height*0.5)
+        let treeOrigin = CGPoint.init(x: self.bounds.width/2, y: self.bounds.height*0.6)
         self.drawTree(origin: treeOrigin, angle: Double.pi/2, depth: maxDepth > treeDepth ? treeDepth : maxDepth)
     }
     
@@ -74,7 +74,7 @@ class FractalView: UIView {
         
         if depth > 0 {
             // draw a line to the endpoint
-            drawLine(lineWidth: 1.0, fromPoint: origin, toPoint:endpoint)
+            drawLine(width: 1.0, from: origin, to:endpoint)
             
             // draw the children branches
             drawTree(origin: endpoint, angle: angle + leftTreeAngle, depth: depth - 1)
@@ -82,17 +82,17 @@ class FractalView: UIView {
         }
     }
     
-    func drawLine(lineWidth:CGFloat, fromPoint:CGPoint, toPoint:CGPoint) -> Void {
+    func drawLine(width: CGFloat, from startPoint: CGPoint, to endPoint:CGPoint) -> Void {
         let path = UIBezierPath()
         
-        let distance = hypotf(Float(fromPoint.x - toPoint.x), Float(fromPoint.y - toPoint.y));
+        let distance = hypotf(Float(startPoint.x - endPoint.x), Float(startPoint.y - endPoint.y));
         let s = distance/Float(self.initialBranchLength)
-        let branchColor = UIColor(hue: 0.5, saturation: 0.8, brightness: CGFloat(1.0 - s), alpha: 1.0)
+        let branchColor = UIColor(hue: 1.0, saturation: 1.0, brightness: CGFloat(1.0 - s), alpha: 1.0)
         
         branchColor.set()
-        path.lineWidth = lineWidth
-        path.move(to: fromPoint)
-        path.addLine(to: toPoint)
+        path.lineWidth = width
+        path.move(to: startPoint)
+        path.addLine(to: endPoint)
         path.stroke()
     }
 }
