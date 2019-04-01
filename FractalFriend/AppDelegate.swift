@@ -23,24 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var coordinator: AppCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        window = UIWindow.init(frame: UIScreen.main.bounds);
-        
-        let nav = UINavigationController()
-        nav.setNavigationBarHidden(true, animated: false)
-        
-        let tabs = UITabBarController()
-        
-        window?.rootViewController = nav
-        coordinator = AppCoordinator(navigationController: nav)
-        
-        let vc = FractalController(nibName:String.init(describing: FractalController.classForCoder()), bundle: nil)
-        vc.tabBarItem = UITabBarItem(title: "Fractal", image: UIImage(named: "home"), tag: 0)
-        let fnav = UINavigationController(rootViewController: vc)
-        
-        tabs.viewControllers = [fnav]
-        nav.viewControllers = [tabs]
-        
+        window = UIWindow.init(frame: UIScreen.main.bounds)
+        let fractalController = FractalController(nibName:String.init(describing: FractalController.classForCoder()), bundle: nil)
+        let navigationController = UINavigationController.init(rootViewController: fractalController)
+        navigationController.setNavigationBarHidden(true, animated: false)
+        coordinator = AppCoordinator(navigationController: navigationController)
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         return true
     }
