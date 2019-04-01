@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina3_5" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -24,21 +24,21 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="emb-sj-E5H" customClass="FractalView" customModule="FractalFriend" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="351.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="439.5"/>
                     <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Force Symmetry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeO-GP-viR" userLabel="Enforce Symmetry Label">
-                    <rect key="frame" x="154" y="360" width="97" height="14.5"/>
+                    <rect key="frame" x="160" y="441.5" width="97" height="27"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                     <color key="textColor" red="1" green="0.40000000000000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2fq-vr-gjk" userLabel="Symmetry Switch">
-                    <rect key="frame" x="261" y="351.5" width="51" height="31"/>
+                    <rect key="frame" x="261" y="439.5" width="51" height="31"/>
                     <color key="tintColor" red="1" green="0.40000000000000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="onTintColor" red="1" green="0.40000000000000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
@@ -46,7 +46,7 @@
                     </connections>
                 </switch>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rDw-tl-ZGy" userLabel="Labels Stack View">
-                    <rect key="frame" x="10" y="392.5" width="300" height="13.5"/>
+                    <rect key="frame" x="10" y="480.5" width="300" height="13.5"/>
                     <subviews>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Left Tree Angle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nmc-dT-NaQ" userLabel="Left Tree Angle Label">
                             <rect key="frame" x="0.0" y="0.0" width="86.5" height="13.5"/>
@@ -84,7 +84,7 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="firstBaseline" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fZQ-Yt-CwN" userLabel="Values Stack View">
-                    <rect key="frame" x="10" y="408" width="300" height="17"/>
+                    <rect key="frame" x="10" y="496" width="300" height="17"/>
                     <subviews>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="radians" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ico-7O-3eO" userLabel="Left Tree Value">
                             <rect key="frame" x="0.0" y="0.0" width="96.5" height="17"/>
@@ -122,7 +122,7 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="akC-cO-QgB" userLabel="Slider Stack View">
-                    <rect key="frame" x="10" y="430" width="300" height="30"/>
+                    <rect key="frame" x="10" y="518" width="300" height="30"/>
                     <subviews>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="80" translatesAutoresizingMaskIntoConstraints="NO" id="tI1-yf-nNf">
                             <rect key="frame" x="-2" y="0.0" width="90.5" height="31"/>
@@ -150,6 +150,26 @@
                         <constraint firstAttribute="height" constant="30" id="c6N-Hc-thc"/>
                     </constraints>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQ6-rp-MBd">
+                    <rect key="frame" x="10" y="441" width="93" height="27"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                    <state key="normal" title="Random Fractal">
+                        <color key="titleColor" red="0.99215686270000003" green="0.49019607840000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="randomFractalButtonTapped:" destination="-1" eventType="touchUpInside" id="UK4-Hp-KA0"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gv1-FV-dFy" userLabel="Force Symmetry Button">
+                    <rect key="frame" x="160" y="441.5" width="97" height="27"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                    <state key="normal" title="Force Symmetry">
+                        <color key="titleColor" red="0.99215686270000003" green="0.49019607840000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="forceSymmetryButtonTapped:" destination="-1" eventType="touchUpInside" id="rKO-EP-ax1"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <gestureRecognizers/>
@@ -157,19 +177,25 @@
                 <constraint firstItem="fZQ-Yt-CwN" firstAttribute="top" secondItem="rDw-tl-ZGy" secondAttribute="bottom" constant="2" id="41V-dn-OUx"/>
                 <constraint firstItem="2fq-vr-gjk" firstAttribute="top" secondItem="emb-sj-E5H" secondAttribute="bottom" id="78B-df-wbj"/>
                 <constraint firstItem="emb-sj-E5H" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8ot-SQ-0zZ"/>
+                <constraint firstItem="gv1-FV-dFy" firstAttribute="centerX" secondItem="BeO-GP-viR" secondAttribute="centerX" id="9Ng-y0-Gn7"/>
                 <constraint firstItem="rDw-tl-ZGy" firstAttribute="top" secondItem="2fq-vr-gjk" secondAttribute="bottom" constant="10" id="F1S-Un-792"/>
                 <constraint firstAttribute="bottom" secondItem="akC-cO-QgB" secondAttribute="bottom" constant="20" id="Hpb-x2-NcA"/>
                 <constraint firstItem="fZQ-Yt-CwN" firstAttribute="centerX" secondItem="akC-cO-QgB" secondAttribute="centerX" id="MCu-aT-QYn"/>
                 <constraint firstItem="rDw-tl-ZGy" firstAttribute="width" secondItem="fZQ-Yt-CwN" secondAttribute="width" id="Mum-sd-kqf"/>
                 <constraint firstItem="2fq-vr-gjk" firstAttribute="centerY" secondItem="BeO-GP-viR" secondAttribute="centerY" id="R84-0k-8f3"/>
                 <constraint firstItem="emb-sj-E5H" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Xpx-oY-HJe"/>
+                <constraint firstItem="gv1-FV-dFy" firstAttribute="height" secondItem="BeO-GP-viR" secondAttribute="height" id="Z9d-fG-NwJ"/>
+                <constraint firstItem="gv1-FV-dFy" firstAttribute="centerY" secondItem="BeO-GP-viR" secondAttribute="centerY" id="ZrX-Kl-5i7"/>
+                <constraint firstItem="rDw-tl-ZGy" firstAttribute="top" secondItem="fQ6-rp-MBd" secondAttribute="bottom" constant="12.5" id="a1F-dJ-qKt"/>
+                <constraint firstItem="gv1-FV-dFy" firstAttribute="width" secondItem="BeO-GP-viR" secondAttribute="width" id="aKb-Ta-Tjb"/>
                 <constraint firstAttribute="trailing" secondItem="2fq-vr-gjk" secondAttribute="trailing" constant="10" id="eUK-B3-vBc"/>
+                <constraint firstItem="fQ6-rp-MBd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="hCu-tX-0uH"/>
                 <constraint firstItem="akC-cO-QgB" firstAttribute="top" secondItem="fZQ-Yt-CwN" secondAttribute="bottom" constant="5" id="m8k-cm-HwA"/>
                 <constraint firstItem="emb-sj-E5H" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="mGs-0w-H8l"/>
                 <constraint firstItem="fZQ-Yt-CwN" firstAttribute="width" secondItem="akC-cO-QgB" secondAttribute="width" id="mfU-j1-ZAt"/>
                 <constraint firstAttribute="trailing" secondItem="akC-cO-QgB" secondAttribute="trailing" constant="10" id="nKh-YA-zDX"/>
                 <constraint firstItem="rDw-tl-ZGy" firstAttribute="centerX" secondItem="fZQ-Yt-CwN" secondAttribute="centerX" id="txK-B7-Dda"/>
-                <constraint firstItem="2fq-vr-gjk" firstAttribute="leading" secondItem="BeO-GP-viR" secondAttribute="trailing" constant="10" id="utJ-eq-eJy"/>
+                <constraint firstItem="2fq-vr-gjk" firstAttribute="leading" secondItem="BeO-GP-viR" secondAttribute="trailing" constant="4" id="utJ-eq-eJy"/>
                 <constraint firstItem="akC-cO-QgB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="wTD-bP-6ap"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

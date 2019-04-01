@@ -117,9 +117,22 @@ class FractalController: UIViewController {
         updateSliderLabels()
     }
     
-    @IBAction func symmetrySwitchValueChanged(_ sender: UISwitch) {
+    func forceSymmetry() {
         self.fractalView.leftTreeAngle = self.fractalView.rightTreeAngle
         self.leftTreeSlider.setValue(self.rightTreeSlider.value, animated: true)
         updateSliderLabels()
+    }
+    
+    @IBAction func symmetrySwitchValueChanged(_ sender: UISwitch) {
+        forceSymmetry()
+    }
+    
+    @IBAction func forceSymmetryButtonTapped(_ sender: Any) {
+        symmetrySwitch.isOn = !symmetrySwitch.isOn
+        forceSymmetry()
+    }
+    
+    @IBAction func randomFractalButtonTapped(_ sender: Any) {
+        generateNewFractal()
     }
 }
