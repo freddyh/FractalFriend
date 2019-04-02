@@ -24,9 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applyTheme() {
         let buttonAppearance = UIButton.appearance()
-//        buttonAppearance.tintColor =
         buttonAppearance.titleLabel?.textColor = UIColor.primaryColor
-        
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

@@ -54,7 +54,7 @@ class FractalController: UIViewController {
         self.setMaximumSliderValue(Float(maximum))
     }
     
-    @objc func shareButtonTapped(sender:UIBarButtonItem) -> Void {
+    @objc func shareButtonTapped(sender:UIBarButtonItem) {
         let ac = UIActivityViewController(activityItems: [self.fractalView.toImage()], applicationActivities: nil)
         guard let navigationController = self.navigationController else {
             return
@@ -62,7 +62,7 @@ class FractalController: UIViewController {
         navigationController.present(ac, animated: true, completion: nil)
     }
     
-    @objc func saveFractalToLibrary() -> Void {
+    @objc func saveFractalToLibrary() {
         let screenShot = self.fractalView.toImage()
         UIImageWriteToSavedPhotosAlbum(screenShot, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
@@ -79,7 +79,7 @@ class FractalController: UIViewController {
         present(ac, animated: true)
     }
     
-    func randomizePickerValues() -> Void {
+    func randomizePickerValues() {
         
         // choose three random indices
         let leftAngleIndex = Int(arc4random_uniform(UInt32(self.radianData.count)))
@@ -94,19 +94,19 @@ class FractalController: UIViewController {
         updateSliderLabels()
     }
     
-    func updateSliderLabels() -> Void {
+    func updateSliderLabels() {
         self.leftTreeValueLabel.text = String(format: "%.2f", self.leftTreeSlider.value)
         self.rightTreeValueLabel.text = String(format: "%.2f", self.rightTreeSlider.value)
         self.depthValueLabel.text = String(format: "\(Int(self.depthSlider.value))" )
     }
     
-    func updateFractalView() -> Void {
+    func updateFractalView() {
         self.fractalView.leftTreeAngle = Double(Int(self.leftTreeSlider.value))
         self.fractalView.rightTreeAngle = Double(Int(self.rightTreeSlider.value))
         self.fractalView.treeDepth = Int(self.depthSlider.value)
     }
     
-    func generateNewFractal() -> Void {
+    func generateNewFractal() {
         self.randomizePickerValues()
         self.updateFractalView()
     }
