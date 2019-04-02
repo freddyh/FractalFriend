@@ -30,11 +30,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="emb-sj-E5H" customClass="FractalView" customModule="FractalFriend" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="371"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="420"/>
                     <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2fq-vr-gjk" userLabel="Symmetry Switch">
-                    <rect key="frame" x="261" y="371" width="51" height="31"/>
+                    <rect key="frame" x="261" y="420" width="51" height="31"/>
                     <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <color key="onTintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <connections>
@@ -42,7 +42,7 @@
                     </connections>
                 </switch>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gv1-FV-dFy" userLabel="Force Symmetry Button">
-                    <rect key="frame" x="160" y="373" width="97" height="27"/>
+                    <rect key="frame" x="160" y="422" width="97" height="27"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                     <state key="normal" title="Force Symmetry">
                         <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -52,7 +52,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQ6-rp-MBd">
-                    <rect key="frame" x="10" y="372.5" width="93" height="27"/>
+                    <rect key="frame" x="10" y="421.5" width="93" height="27"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                     <state key="normal" title="Random Fractal">
                         <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -62,7 +62,7 @@
                     </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rDw-tl-ZGy" userLabel="Left Tree Stack">
-                    <rect key="frame" x="16" y="412" width="288" height="30"/>
+                    <rect key="frame" x="16" y="461" width="288" height="30"/>
                     <subviews>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Left" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nmc-dT-NaQ" userLabel="Left Tree Angle Label">
                             <rect key="frame" x="0.0" y="8.5" width="28" height="13.5"/>
@@ -105,7 +105,7 @@
                     </constraints>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fZQ-Yt-CwN" userLabel="Right Tree Stack">
-                    <rect key="frame" x="16" y="444" width="288" height="30"/>
+                    <rect key="frame" x="16" y="493" width="288" height="30"/>
                     <subviews>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Right" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1B-cv-L5h" userLabel="Right Tree Angle Label">
                             <rect key="frame" x="0.0" y="8.5" width="28" height="13.5"/>
@@ -145,7 +145,7 @@
                     </constraints>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="akC-cO-QgB" userLabel="Tree Depth Stack">
-                    <rect key="frame" x="16" y="479" width="288" height="30"/>
+                    <rect key="frame" x="16" y="528" width="288" height="30"/>
                     <subviews>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Depth" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnB-sZ-91c" userLabel="Depth Label">
                             <rect key="frame" x="0.0" y="0.0" width="32" height="30"/>
@@ -211,7 +211,6 @@
                 <constraint firstItem="rDw-tl-ZGy" firstAttribute="top" secondItem="2fq-vr-gjk" secondAttribute="bottom" constant="10" id="yWy-VW-fDY"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
-            <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
             <viewLayoutGuide key="safeArea" id="ham-mr-9vg"/>
             <point key="canvasLocation" x="34" y="53"/>
         </view>
