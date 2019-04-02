@@ -19,11 +19,12 @@ class FractalController: UIViewController {
     @IBOutlet weak var rightTreeValueLabel: UILabel!
     @IBOutlet weak var depthValueLabel: UILabel!
     
-    let radianData = Array(stride(from: -2*Double.pi, to: 2*Double.pi, by: Double.pi/120))
+    let radianData = Array(stride(from: -2 * Float.pi, to: 2*Float.pi, by: Float.pi/120))
     let branchData = Array(stride(from: 2, to: 18, by: 1))
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(saveFractalToLibrary))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareButtonTapped(sender:)))
@@ -46,12 +47,12 @@ class FractalController: UIViewController {
         guard let minimum = self.radianData.first else {
             return
         }
-        self.setMinimumSliderValue(Float(minimum))
+        self.setMinimumSliderValue(minimum)
         
         guard let maximum = self.radianData.last else {
             return
         }
-        self.setMaximumSliderValue(Float(maximum))
+        self.setMaximumSliderValue(maximum)
     }
     
     @objc func shareButtonTapped(sender:UIBarButtonItem) {
@@ -80,16 +81,13 @@ class FractalController: UIViewController {
     }
     
     func randomizePickerValues() {
-        
-        // choose three random indices
-        let leftAngleIndex = Int(arc4random_uniform(UInt32(self.radianData.count)))
-        let rightAngleIndex = symmetrySwitch.isOn ? leftAngleIndex : Int(arc4random_uniform(UInt32(self.radianData.count)))
-        let depthIndex = Int(arc4random_uniform(UInt32(self.branchData.count)))
-        
         // animate the picker to display the values at the random index
-        self.leftTreeSlider.setValue(Float(self.radianData[leftAngleIndex]), animated: true);
-        self.rightTreeSlider.setValue(Float(self.radianData[rightAngleIndex]), animated: true)
-        self.depthSlider.setValue(Float(self.branchData[depthIndex]), animated: true)
+        guard let leftValue = self.radianData.randomElement() else { return }
+        guard let rightValue = self.radianData.randomElement() else { return }
+        guard let depthValue = self.branchData.randomElement() else { return }
+        self.leftTreeSlider.setValue(leftValue, animated: true);
+        self.rightTreeSlider.setValue(self.symmetrySwitch.isOn ?  leftValue : rightValue, animated: true)
+        self.depthSlider.setValue(Float(depthValue), animated: true)
         
         updateSliderLabels()
     }
