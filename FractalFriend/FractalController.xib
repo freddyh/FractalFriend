@@ -85,7 +85,7 @@
                                 <action selector="leftTreeSliderChanged:" destination="-1" eventType="valueChanged" id="bZq-pS-q6d"/>
                             </connections>
                         </slider>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="-3.14" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ico-7O-3eO" userLabel="Left Tree Value">
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="-3.14" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ico-7O-3eO" userLabel="Left Tree Value">
                             <rect key="frame" x="248" y="6.5" width="40" height="17"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="fJ7-WL-D9g"/>
@@ -128,7 +128,7 @@
                                 <action selector="rightTreeSliderChanged:" destination="-1" eventType="valueChanged" id="8bm-qM-ujh"/>
                             </connections>
                         </slider>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="3.14" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzq-pK-U3B" userLabel="Right Tree Value">
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="3.14" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzq-pK-U3B" userLabel="Right Tree Value">
                             <rect key="frame" x="248" y="6.5" width="40" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -168,7 +168,7 @@
                                 <action selector="depthSliderChanged:" destination="-1" eventType="valueChanged" id="mwQ-9r-yst"/>
                             </connections>
                         </slider>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="666" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrt-bX-51k" userLabel="Depth Value">
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="666" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrt-bX-51k" userLabel="Depth Value">
                             <rect key="frame" x="248" y="0.0" width="40" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
